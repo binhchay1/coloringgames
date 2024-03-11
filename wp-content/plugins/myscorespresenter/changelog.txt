@@ -1,0 +1,79 @@
+v4.3.0 - 2020-06-19
+  - New: Leaderboard Widget for daily scores, weekly scores, monthly scores, total scores and total play duration
+  - Tweak: Renamed existing "Leaderboard" widget to "Highscore Leaderboard"
+  - Tweak: Load localization support earlier to avoid issues with BuddyPress translations
+  - Tweak: Language file updated
+
+v4.2.1 - 2019-01-25
+  - Fix: Use plugins_url() istead of WP_PLUGIN_URL constant
+
+v4.2.0 - 2015-12-13
+  - New: Widget to display Medals / Achievements
+  - Fix: PHP Notices on latest WordPress version
+
+v4.1.0 - 2014-01-15
+  - New: Added rank classes to widget outputs to be able to style every rank separately.
+  - Fix: Score ordering
+  - Tweek: Braces according WordPress coding standard
+
+v4.0.0 - 2013-09-18
+  - New: Compatibility with BuddyPress 1.8+
+  - New: Display user's medals on BuddyPress profile
+  - New: Display user's latest scores on BuddyPress profile
+  - New: Display user's high scores on BuddyPress profile
+  - New: Display user avatars on score widgets
+  - New: Filter to change the avatar size
+  - New: Single score widget will only be displayed on high score games
+  - New: User WordPress Transients to speed up the site
+  - New: Added localization support
+  - New: Reduced memory footprint
+  - New: A lot of new filters (Check support forum)
+  - Fix: Use post title instead of the game name
+
+v3.10 - 2012-03-18
+  - New: Improved settings descriptions
+  - New: Updated BuddyPress scores template
+  - Fix: "My Scores" on BuddyPress profile page can't be viewed by other users
+
+v3.01 - 2011-12-17
+  - Fix: User link when Buddypress is installed
+
+v3.00 - 2011-09-16
+  - New: Added new template variable %HIGHSCORE%
+  - New: Real game play counter widget (Most Active Players)
+  - New: Overall Leaderboard Widget
+
+v2.00 - 2010-06-06
+  - Added: Link to BuddyPress profiles
+  - Added: HighScores for BuddyPress profile pages
+  - Added: Themplate file based Score output on BuddyPress profile pages
+  - Added: User Score Widget when BuddyPress is installed
+
+v1.32 - 2010-05-01
+  - Edit: Show global scores only if enabled
+
+v1.31 - 2010-04-15
+  - Fixed: Error when output the global score widget
+  - Edit:  Moved the MyGameListCreator menu from "Settings" to "MyArcade"
+
+v1.30 - 2010-03-24
+  - Added: Widgets for Scores
+  - Fixed: Score sorting
+  - Fixed: Renamed post metas to avoid conflicts with other plugins (All In One Seo)
+
+v1.2.2 - 2010-01-12
+  - Fixed: Single game scores orderd by the latest scores and not by highest scores
+
+v1.2.1 - 2009-12-31
+  - Fixed: Not showing the trophy
+
+v1.2 - 2009-12-28
+  - Added: Global Scores
+  - Added: Check, if a game has leaderboard enabled
+  - Added: Show scores on users profile, if mingle is installed
+
+v1.1 - 2009-12-22
+  Fixed: Wrong game link on latest scores
+
+v1.0 - 2009-12-21
+  Initial Version

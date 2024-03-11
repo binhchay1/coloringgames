@@ -1,0 +1,311 @@
+body {
+	background: #bbebff url( '../images/blue/background.jpg') top left repeat-x;
+	color: #549bdd;
+}
+.must-log-in a {
+	color: #549bdd;
+}
+.nofavs {
+	background: url( '../images/blue/nofavs.png' ) center center no-repeat;
+}
+.ft_gameshowcase, .ft_contentshowcase {
+	background-color:#003f7a;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 42, 82, 1);
+	-moz-box-shadow:    0px 0px 8px rgba(0, 42, 82, 1);
+	box-shadow:         0px 0px 8px rgba(0, 42, 82, 1);
+}
+.ft_gameshowcase li .framespan {
+	background: url( '../images/blue/frame.png' ) bottom left no-repeat;
+}
+.ft_gameshowcase li:hover .framespan {
+	background: url( '../images/blue/frame.png' ) top left no-repeat;
+}
+.games-related_custom li .framespan {
+	background: url( '../images/blue/frame.png' ) bottom left no-repeat;
+}
+.games_title{
+	background-color:#002258;
+}
+.previous-post {
+	background-color: #003369;
+ }
+.previous-post_complex {
+ 	background-color: #003369;
+ }
+.previous-post:hover img, .next-post:hover img, .previous-post_complex:hover img, .next-post_complex:hover img {
+	border-color: #003C76;
+}
+.previous-post:hover, .next-post:hover, .previous-post_complex:hover, .next-post_complex:hover {
+	background-color: #002b5f;
+}
+.next-post {
+	background-color: #003369;
+}
+.next-post_complex {
+	background-color: #003369;
+}
+.next-post h4 a, .next-post_complex h4 a {
+	color: #4DC6FF;
+}
+.previous-post h4 a, .previous-post_complex h4 a {
+	color: #4DC6FF;
+}
+.post_title_next_complex,  .post_title_prev, .post_title_prev_complex {
+    color: #4DC6FF;
+ }
+ .pr-post_info p, .pr-post_info_complex p {
+ 	color: #2c73b8;
+ }
+ .post-gameimg {
+  border: 10px solid #002656;
+ }
+ .remove-link {
+ 	background-color: #002258;
+ }
+.remove-link a {
+	color: #57a4df;
+}
+.catpage_desc{
+	background:#002258 url( '../images/blue/catimg.png' ) no-repeat;
+}
+.wp-pagenavi .page {
+	background: url( '../images/blue/pagecircles.png' ) top left no-repeat;
+}
+.wp-pagenavi .page:hover {
+ 	background: url( '../images/blue/pagecircles.png' ) bottom left no-repeat;
+}
+.wp-pagenavi .current {
+ 	background: url( '../images/blue/pagecircles.png' ) bottom left no-repeat !important;
+}
+.pagi_normal {
+	background: url( '../images/blue/pagecircles.png' ) top left no-repeat;
+}
+.pagi_normal:hover {
+  background: url( '../images/blue/pagecircles.png' ) bottom left no-repeat;
+}
+.pagi_on {
+ 	background: url( '../images/blue/pagecircles.png' ) bottom left no-repeat !important;
+}
+.wp-pagenavi span, .wp-pagenavi a {
+	color: #002258;
+}
+.footer_wrapper li a:hover {
+	color: #0260b9;
+}
+.footer_link {
+	color: #002f5c;
+}
+.footer_link a {
+	color:#002f5c;
+}
+.gamepagebox, .gamepagebox_adoff {
+  background-color:#003f7a;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 42, 82, 1);
+  -moz-box-shadow:    0px 0px 8px rgba(0, 42, 82, 1);
+  box-shadow:         0px 0px 8px rgba(0, 42, 82, 1);
+}
+.gamepagebox h1 {
+  background-color: #002258;
+}
+li.adspace, .adspace_right {
+	background: url( '../images/blue/300bg.png' ) top center no-repeat;
+}
+.adblock {
+	background-color:#003262;
+}
+.options_panel {
+  background-color: #002258;
+}
+.normal_box {
+  background-color: #003262;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 42, 82, 1);
+  -moz-box-shadow:    0px 0px 8px rgba(0, 42, 82, 1);
+  box-shadow:         0px 0px 8px rgba(0, 42, 82, 1);
+}
+li.active {
+  background-color: #002258;
+}
+.gamedesc_info h2, .gamedesc_info_right h2 {
+  color: #4691DA;
+}
+.gamedesc_info {
+	background: url( '../images/blue/gameinfo.png' ) center left no-repeat;
+}
+.gameinfo_functions {
+	background-color: #002656;
+}
+.gamemiscstats {
+	background: url( '../images/blue/gpstat.png' ) no-repeat;
+}
+.gpcats {
+	background: url( '../images/blue/gpfolder.png' ) no-repeat;
+}
+.gpcats a, .gptags a, .admin_actions a {
+	color: #4691DA;
+}
+.gptags {
+	background: url( '../images/blue/taginfo.png' ) no-repeat;
+}
+.emdbedcodebox {
+	background-color:#002656;
+}
+.emdbedcodebox p {
+	color: #4691DA;
+}
+.emdbedcodebox textarea {
+	color: #4691DA;
+	background-color: #00142d;
+}
+.allcomments h3 {
+	background-color: #002656;
+}
+.depth-3 #reply-title {
+	background-color: #00142D;
+}
+.depth-4 #reply-title {
+	background-color: #002656;
+}
+.screenshot_box {
+	background-color: #002656;
+}
+.depth-1 .comment-reply-link,
+.depth-2 .comment-reply-link,
+.depth-3 .comment-reply-link,
+.depth-4 .comment-reply-link {
+	background-color: #2568AA;
+}
+.depth-1 .comment-reply-link:hover,
+.depth-2 .comment-reply-link:hover,
+.depth-3 .comment-reply-link:hover,
+.depth-4 .comment-reply-link:hover {
+	background-color: #18538d;
+}
+.form-allowed-tags {
+	background-color:#002656;
+	color:#3b7bb9;
+}
+#commentform input {
+	color: #48a9ff;
+	background-color:#002656;
+	border: 2px solid #0a609c;
+}
+#commentform textarea {
+	color:#48a9ff;
+	background-color:#002656;
+	border: 2px solid #0a609c;
+}
+#commentform input:hover, #commentform textarea:hover {
+	border-color: #7e529c;
+}
+.logged-in-as {
+	color: #48a9ff;
+}
+ol.commentlist li {
+	background-color: #082d5c;
+}
+div.vcard img.avatar {
+	border: 5px solid #003C76;
+}
+ol.commentlist li a {
+	color: #4691DA;
+}
+ol.commentlist li ul.children li.depth-2 {
+  background-color:#003C76 !important;
+}
+
+ol.commentlist li ul.children li.depth-3 {
+  background-color:#073063 !important;
+}
+
+ol.commentlist li ul.children li.depth-4 {
+  background-color:#003C76 !important;
+}
+ol.commentlist li ul.children li.depth-5 {
+  background-color:#073063 !important;
+}
+.single-one-options {
+	background-color: #002258;
+}
+.entry p a {
+	color: #549BDD;
+}
+.entry blockquote {
+	background-color: #0A3163;
+}
+#progressbar {
+  background: #082E5F;
+}
+.fullscreen {
+	background: url( '../images/blue/toggles.png ') no-repeat;
+	background-position: 0px 0px;
+}
+.fullscreen:hover {
+	background: url( '../images/blue/toggles.png ') bottom left no-repeat;
+}
+.interruptor{
+	background:url( '../images/blue/toggles.png' ) no-repeat;
+	background-position:-69px 0px;
+}
+.interruptor:hover {
+	background:url( '../images/blue/toggles.png' ) -69px -53px no-repeat;
+}
+.luz_apagada {
+  background: url( '../images/blue/toggles.png' ) no-repeat scroll -69px -53px transparent !important;
+}
+.luz_apagada:hover {
+ 	background: url( '../images/blue/toggles.png' ) no-repeat scroll -69px 0px transparent !important;
+}
+.favoritos {
+	background: url( '../images/blue/toggles.png' ) no-repeat scroll -69px 0px transparent !important;
+}
+.vertical_adbox {
+	background-color: #002656;
+}
+.games-related li .framespan {
+	background: url( '../images/blue/frame.png' ) bottom left no-repeat;
+}
+.games-related li:hover .framespan {
+	background: url( '../images/blue/frame.png' ) top left no-repeat;
+}
+.register-section input, #activation-form input {
+	background-color:#002b55;
+	border:2px solid #0069cc;
+}
+.register-section input:hover, #activation-form input:hover {
+	border-color: #288eee;
+}
+.register-section input:focus, #activation-form input:focus {
+	border-color: #288eee;
+}
+.leader_adspace_top, .leader_adspace_bottom, .leader_adspace_bottomstyle2, .leader_ab_sone, .tricera_customtext {
+	background-color: #002258;
+}
+.noresult_error {
+	background: url( '../images/blue/nosearch.png' ) top center no-repeat;
+}
+.related-games-box {
+	background: url( '../images/blue/related_title.png' ) center 15px no-repeat;
+}
+.games-related_custom li:hover .framespan {
+	background: url( '../images/blue/frame.png' ) top left no-repeat;
+}
+.custom-related {
+	background: url( '../images/blue/related_title.png' ) top left no-repeat!important;
+}
+/** BuddyPress */
+#buddypress #header-cover-image {background-color: #002258}
+#buddypress .single-headers .item-meta {color: #fff}
+.buddypress-wrap.bp-dir-hori-nav:not(.bp-vertical-navs) nav:not(.tabbed-links) {border-color: #4DC6FF}
+.buddypress-wrap .member-description a {color: #4DC6FF}
+.buddypress-wrap .bp-subnavs ul li.current :focus, .buddypress-wrap .bp-subnavs ul li.current :hover, .buddypress-wrap .bp-subnavs ul li.selected :focus, .buddypress-wrap .bp-subnavs ul li.selected :hover {color: #002258;background: #ccc}
+.buddypress-wrap .main-navs:not(.dir-navs) li.current a, .buddypress-wrap .main-navs:not(.dir-navs) li.selected a {background: #ccc;color: #002258}
+.buddypress .buddypress-wrap input.text-button {color: #fff}
+.buddypress-wrap div.feed a:before {color: #fff}
+.buddypress-wrap .subnav-filters .component-filters select {color: #4DC6FF}
+.buddypress-wrap .subnav-filters .component-filters option {background: #002258}
+body.buddypress .ft_gameshowcase li, body.buddypress .ft_gameshowcase li a {color: #4DC6FF}
+.buddypress-wrap .bp-tables-user tbody tr {background: #002258}
+.buddypress-wrap .bp-tables-user tr td.label {border-right-color: #002258}
+.buddypress-wrap .bp-pagination.top {color: #4DC6FF}
+.buddypress-wrap .bp-pagination {color:#002258}
+.buddypress-wrap .bp-list>li {border-bottom-color: #002258}

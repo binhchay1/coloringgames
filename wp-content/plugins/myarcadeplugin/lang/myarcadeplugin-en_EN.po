@@ -1,0 +1,2993 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MyArcadePlugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-17 22:55+0200\n"
+"PO-Revision-Date: 2020-06-17 22:55+0200\n"
+"Last-Translator: Daniel Bakovic <contact@myarcadeplugin.com>\n"
+"Language-Team: MyArcadePlugin <contact@myarcadeplugin.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: *.js\n"
+
+#: core/addgames.php:264
+msgid "Game ID not provided."
+msgstr ""
+
+#: core/addgames.php:293
+msgid "Can't find the game in the games database table."
+msgstr ""
+
+#: core/addgames.php:399
+msgid "Use URL provided by the game distributor."
+msgstr ""
+
+#: core/addgames.php:400
+msgid "Download Thumbnail"
+msgstr ""
+
+#: core/addgames.php:401
+msgid "Download Screenshot"
+msgstr ""
+
+#: core/addgames.php:402
+msgid "Download Game"
+msgstr ""
+
+#: core/addgames.php:403
+msgid "FAILED"
+msgstr ""
+
+#: core/addgames.php:404 core/fetch.php:118 core/fetch.php:144
+#: core/fetch.php:189 core/fetch.php:214
+msgid "OK"
+msgstr ""
+
+#: core/addgames.php:453
+#, php-format
+msgid "Downloading Screenshot No. %s"
+msgstr ""
+
+#: core/addgames.php:715
+#, php-format
+msgid "Found %s new game(s)."
+msgstr ""
+
+#: core/addgames.php:716
+msgid "Now, you can publish new games on your site."
+msgstr ""
+
+#: core/addgames.php:719
+msgid "No new games found!"
+msgstr ""
+
+#: core/addgames.php:798
+msgid "WARNING!"
+msgstr ""
+
+#: core/addgames.php:798
+msgid "Can't make needed settins, because you have Safe Mode active."
+msgstr ""
+
+#: core/addgames.php:924
+msgid "Error: Post can not be created!"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:26 core/myarcade_admin.php:35
+msgid "Dashboard"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:57
+msgid "MyArcadePlugin Info"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:61
+msgid "Total Live Games / Posts"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:62
+msgid "Total Scheduled Games / Posts"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:63
+msgid "Total Draft Games / Posts"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:67
+msgid "Unpublished Games"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:69 core/admin/admin-settings.php:304
+#: core/admin/import_form.php:578
+msgid "Post Status"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:71
+msgid "minutes schedule"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:77
+msgid "Cron Fetching"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:79 core/admin/admin-dashboard.php:87
+msgid "Next schedule on"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:81 core/admin/admin-dashboard.php:89
+msgid "inactive"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:85
+msgid "Cron Publishing"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:95 core/admin/admin-settings.php:317
+msgid "Download Games"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:95 core/admin/admin-dashboard.php:96
+#: core/admin/admin-settings.php:270 core/admin/admin-settings.php:279
+#: core/admin/admin-settings.php:321 core/admin/admin-settings.php:330
+#: core/admin/admin-settings.php:354 core/admin/admin-settings.php:380
+#: core/admin/admin-settings.php:429 core/admin/admin-settings.php:460
+#: core/admin/admin-settings.php:478 core/admin/admin-settings.php:537
+#: core/admin/admin-settings.php:550 core/admin/admin-settings.php:674
+#: core/feeds/agf.php:61 core/feeds/agf.php:79 core/feeds/famobi.php:113
+#: core/feeds/famobi.php:131 core/feeds/fog.php:62 core/feeds/fog.php:110
+#: core/feeds/fog.php:128 core/feeds/fourj.php:63 core/feeds/fourj.php:71
+#: core/feeds/fourj.php:79 core/feeds/fourj.php:97
+#: core/feeds/fourjrevshare.php:68 core/feeds/gamedistribution.php:162
+#: core/feeds/gamedistribution.php:180 core/feeds/gamemonetize.php:75
+#: core/feeds/gamemonetize.php:93 core/feeds/gamepix.php:93
+#: core/feeds/htmlgames.php:78 core/feeds/kongregate.php:47
+#: core/feeds/myarcadefeed.php:74 core/feeds/playtomax.php:91
+#: core/feeds/plinga.php:73 core/feeds/scirra.php:72 core/feeds/scirra.php:90
+#: core/feeds/scirra.php:197 core/feeds/softgames.php:142
+#: modules/buddypress.php:138
+msgid "Yes"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:95 core/admin/admin-dashboard.php:96
+#: modules/buddypress.php:139
+msgid "No"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:96 core/admin/admin-settings.php:326
+msgid "Download Screenshots"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:100
+msgid "Product Support"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:100
+msgid "Forum"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:104
+msgid "MyArcadePlugin Real CRON Trigger"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:105
+msgid ""
+"If you want to use a cron job instead of WordPress Cron to trigger automated "
+"game fetching and publishing use following URLs:"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:107
+msgid "Game Fetching:"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:108
+msgid "Game Publishing:"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:123
+msgid "Lastest MyArcadePlugin News"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:135
+msgid "Be Our Friend!"
+msgstr ""
+
+#: core/admin/admin-dashboard.php:138
+msgid "If you like MyArcadePlugin, become our friend on Facebook"
+msgstr ""
+
+#: core/admin/admin-fetch.php:27 core/admin/admin-fetch.php:82
+#: core/feeds/agf.php:66 core/feeds/famobi.php:118 core/feeds/fog.php:115
+#: core/feeds/fourj.php:84 core/feeds/gamedistribution.php:167
+#: core/feeds/gamemonetize.php:80 core/feeds/scirra.php:77
+#: core/myarcade_admin.php:39 core/myarcade_admin.php:40
+msgid "Fetch Games"
+msgstr ""
+
+#: core/admin/admin-fetch.php:42
+msgid "Select a game distributor"
+msgstr ""
+
+#: core/admin/admin-fetch.php:52
+msgid "Keyword"
+msgstr ""
+
+#: core/admin/admin-fetch.php:53
+msgid "Add only games that contain the given keyword in title or description."
+msgstr ""
+
+#: core/admin/admin-fetch.php:79 core/admin/admin-settings.php:185
+msgid "You will not be able to fetch games!"
+msgstr ""
+
+#: core/admin/admin-fetch.php:79
+msgid "Navigate to \"General Settings\" and activate some game categories!"
+msgstr ""
+
+#: core/admin/admin-fetch.php:120
+#, php-format
+msgid "ERROR: Required distributor file can't be found: %s!"
+msgstr ""
+
+#: core/admin/admin-fetch.php:128
+msgid "ERROR: Unknown game distributor!"
+msgstr ""
+
+#: core/admin/admin-fetch.php:149
+msgid "There are no specific settings available. Just Fetch the games :)"
+msgstr ""
+
+#: core/admin/admin-import.php:96
+#, php-format
+msgid "Import of '%s' was succsessful."
+msgstr ""
+
+#: core/admin/admin-import.php:99
+msgid "Can't import that game..."
+msgstr ""
+
+#: core/admin/admin-import.php:103
+#, php-format
+msgid "Game added successfully: %s"
+msgstr ""
+
+#: core/admin/admin-import.php:122
+msgid "Import Individual Games"
+msgstr ""
+
+#: core/admin/admin-import.php:128
+msgid "Import Method"
+msgstr ""
+
+#: core/admin/admin-import.php:133
+msgid "HTML5 game (.zip)"
+msgstr ""
+
+#: core/admin/admin-import.php:134
+msgid "Flash or DCR game (.swf, .dcr)"
+msgstr ""
+
+#: core/admin/admin-import.php:135
+msgid "IBPArcade game (.tar)"
+msgstr ""
+
+#: core/admin/admin-import.php:136
+msgid "PHPBB game (.zip)"
+msgstr ""
+
+#: core/admin/admin-import.php:137
+msgid "Unity3D game (.unity3d)"
+msgstr ""
+
+#: core/admin/admin-import.php:138
+msgid "Embed / Iframe game"
+msgstr ""
+
+#: core/admin/admin-import.php:141
+msgid "Choose a desired import method."
+msgstr ""
+
+#: core/admin/admin-manage-scores.php:69 core/myarcade_admin.php:61
+#: core/myarcade_admin.php:62
+msgid "Manage Scores"
+msgstr ""
+
+#: core/admin/admin-manage-scores.php:110
+#, php-format
+msgid "No WordPress post found for this score. Score ID: %s"
+msgstr ""
+
+#: core/admin/admin-manage-scores.php:119 core/admin/admin-post-meta.php:358
+msgid "Edit Score"
+msgstr ""
+
+#: core/admin/admin-manage-scores.php:119 core/admin/admin-post-meta.php:358
+#: core/myarcade_admin.php:632
+msgid "Edit"
+msgstr ""
+
+#: core/admin/admin-manage-scores.php:120 core/admin/admin-post-meta.php:359
+#: core/myarcade_admin.php:618
+msgid "Delete"
+msgstr ""
+
+#: core/admin/admin-manage-scores.php:136
+msgid "No scores available"
+msgstr ""
+
+#: core/admin/admin-manage.php:26 core/myarcade_admin.php:56
+#: core/myarcade_admin.php:57
+msgid "Manage Games"
+msgstr ""
+
+#: core/admin/admin-manage.php:31
+msgid "Search term was not entered!"
+msgstr ""
+
+#: core/admin/admin-manage.php:132
+msgid "Nothing found!"
+msgstr ""
+
+#: core/admin/admin-manage.php:140
+msgid "Search for"
+msgstr ""
+
+#: core/admin/admin-manage.php:146
+msgid "Type"
+msgstr ""
+
+#: core/admin/admin-manage.php:155 core/admin/admin-publish.php:132
+msgid "HTML5 Games"
+msgstr ""
+
+#: core/admin/admin-manage.php:156 core/admin/admin-publish.php:133
+msgid "Embed Codes"
+msgstr ""
+
+#: core/admin/admin-manage.php:157 core/admin/admin-publish.php:134
+msgid "Iframe (URL)"
+msgstr ""
+
+#: core/admin/admin-manage.php:158 core/admin/admin-publish.php:135
+msgid "IBPArcade Games"
+msgstr ""
+
+#: core/admin/admin-manage.php:159 core/admin/admin-publish.php:136
+msgid "PHPBB Games"
+msgstr ""
+
+#: core/admin/admin-manage.php:160 core/admin/admin-publish.php:137
+msgid "Shockwave Games (DCR)"
+msgstr ""
+
+#: core/admin/admin-manage.php:161 core/admin/admin-publish.php:138
+msgid "Flash Games (SWF)"
+msgstr ""
+
+#: core/admin/admin-manage.php:167
+msgid "Leaderboard Enabled"
+msgstr ""
+
+#: core/admin/admin-manage.php:174
+msgid "Game Status"
+msgstr ""
+
+#: core/admin/admin-manage.php:184 core/admin/admin-publish.php:160
+msgid "Order"
+msgstr ""
+
+#: core/admin/admin-manage.php:189
+msgid "by"
+msgstr ""
+
+#: core/admin/admin-manage.php:202
+msgid "Game Category"
+msgstr ""
+
+#: core/admin/admin-manage.php:214
+msgid "Display"
+msgstr ""
+
+#: core/admin/admin-manage.php:216
+msgid "games from offset"
+msgstr ""
+
+#: core/admin/admin-manage.php:225
+msgid "Yes, delete games"
+msgstr ""
+
+#: core/admin/admin-manage.php:226
+msgid "Bulk Delete"
+msgstr ""
+
+#: core/admin/admin-manage.php:235
+msgid "Bulk Delete executed successfully!"
+msgstr ""
+
+#: core/admin/admin-manage.php:238
+#, php-format
+msgid ""
+"Results found: <strong>%s</strong>. Displaying results from <strong>%s</"
+"strong> to <strong>%s</strong>."
+msgstr ""
+
+#: core/admin/admin-manage.php:301
+msgid "Browser Your Game Catalog"
+msgstr ""
+
+#: core/admin/admin-manage.php:346
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-latest-plays.php:58
+msgid "No games found"
+msgstr ""
+
+#: core/admin/admin-manage.php:352
+msgid "10 Last Deleted Games"
+msgstr ""
+
+#: core/admin/admin-manage.php:399
+msgid "Are you really sure you want to run a bulk game delete?"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:57
+msgid "MyArcadePlugin Game Details"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:71
+msgid "MyArcadePlugin Game Scores"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:89
+msgid "This post is not a game."
+msgstr ""
+
+#: core/admin/admin-post-meta.php:101
+msgid "Game Details"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:102 core/admin/import_form.php:12
+#: core/admin/import_form.php:70 core/admin/import_form.php:128
+#: core/admin/import_form.php:186 core/admin/import_form.php:240
+#: core/admin/import_form.php:281
+msgid "Game Files"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:111 core/admin/import_form.php:510
+#: core/editgame.php:221
+msgid "Game Description"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:116 core/admin/import_form.php:527
+#: core/editgame.php:236
+msgid "Game Instructions"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:121
+msgid "Height"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:122
+msgid "Game height in pixel (px)"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:127
+msgid "Width"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:128
+msgid "Game width in pixel (px)"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:133 core/admin/admin-publish.php:123
+#: core/editgame.php:349
+msgid "Game Type"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:139
+msgid "Score Support"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:140
+msgid "Select if this game supports score submitting (Only IBPArcade games)."
+msgstr ""
+
+#: core/admin/admin-post-meta.php:146 core/admin/import_form.php:636
+msgid "Score Order"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:147
+msgid "How should MyArcadePlugin order scores for this game."
+msgstr ""
+
+#: core/admin/admin-post-meta.php:165 myarcadeplugin.php:199
+msgid "Embed Code"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:171
+msgid "Game File"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:173
+msgid "File path / URL / Embed Code"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:174 core/admin/admin-post-meta.php:183
+#: core/admin/admin-post-meta.php:191 core/admin/admin-post-meta.php:199
+#: core/admin/admin-post-meta.php:207 core/admin/admin-post-meta.php:215
+msgid "Upload a file"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:179 core/admin/import_form.php:341
+msgid "Game Thumbnail"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:182 core/admin/admin-post-meta.php:190
+#: core/admin/admin-post-meta.php:198 core/admin/admin-post-meta.php:206
+#: core/admin/admin-post-meta.php:214
+msgid "File path / URL"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:187
+msgid "Game Screenshot No. 1"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:195
+msgid "Game Screenshot No. 2"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:203
+msgid "Game Screenshot No. 3"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:211
+msgid "Game Screenshot No. 4"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:220
+msgid "Video URL"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:221
+msgid "Paste a game play video URL (YouTube Link) here."
+msgstr ""
+
+#: core/admin/admin-post-meta.php:303
+msgid "ERROR: Post ID not found!"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:321
+msgid "Are you sure you want to delete all game scores?"
+msgstr ""
+
+#: core/admin/admin-post-meta.php:331 core/admin/admin-post-meta.php:373
+msgid "No scores available."
+msgstr ""
+
+#: core/admin/admin-post-meta.php:340 core/admin/admin-settings.php:1068
+#: core/admin/admin-settings.php:1073
+msgid "Delete All Scores"
+msgstr ""
+
+#: core/admin/admin-publish.php:116 core/admin/admin-settings.php:296
+#: core/feeds/agf.php:84 core/feeds/famobi.php:136 core/feeds/fog.php:133
+#: core/feeds/fourj.php:102 core/feeds/fourjrevshare.php:73
+#: core/feeds/gamedistribution.php:185 core/feeds/gamemonetize.php:98
+#: core/feeds/gamepix.php:98 core/feeds/htmlgames.php:83
+#: core/feeds/kongregate.php:52 core/feeds/playtomax.php:96
+#: core/feeds/plinga.php:78 core/feeds/scirra.php:95
+#: core/feeds/softgames.php:147 core/myarcade_admin.php:51
+#: core/myarcade_admin.php:52
+msgid "Publish Games"
+msgstr ""
+
+#: core/admin/admin-publish.php:144
+msgid "Score Games"
+msgstr ""
+
+#: core/admin/admin-publish.php:150
+msgid "Status"
+msgstr ""
+
+#: core/admin/admin-publish.php:152 core/admin/admin-settings.php:308
+#: core/admin/import_form.php:585 core/editgame.php:160
+#: core/myarcade_admin.php:616
+msgid "Publish"
+msgstr ""
+
+#: core/admin/admin-publish.php:153 core/admin/admin-settings.php:310
+#: core/myarcade_admin.php:617
+msgid "Draft"
+msgstr ""
+
+#: core/admin/admin-publish.php:154 core/admin/admin-settings.php:309
+msgid "Scheduled"
+msgstr ""
+
+#: core/admin/admin-publish.php:162
+msgid "Older Games First (ASC)"
+msgstr ""
+
+#: core/admin/admin-publish.php:163
+msgid "Newer Games First (DESC)"
+msgstr ""
+
+#: core/admin/admin-publish.php:170 core/admin/admin-settings.php:412
+#: core/feeds/fog.php:67
+msgid "Game Categories"
+msgstr ""
+
+#: core/admin/admin-publish.php:172
+msgid "All Activated"
+msgstr ""
+
+#: core/admin/admin-publish.php:188
+msgid "Create"
+msgstr ""
+
+#: core/admin/admin-publish.php:190
+msgid "game posts"
+msgstr ""
+
+#: core/admin/admin-publish.php:236
+#, php-format
+msgid ""
+"The images directory '%s' must be writeable (chmod 777) in order to download "
+"game images."
+msgstr ""
+
+#: core/admin/admin-publish.php:242 core/myarcade_admin.php:1044
+#, php-format
+msgid ""
+"The games directory '%s' must be writeable (chmod 777) in order to download "
+"games."
+msgstr ""
+
+#: core/admin/admin-publish.php:250
+msgid ""
+"Please be patient while games are published. This can take a while if your "
+"server is slow or if there are a lot of games. Do not navigate away from "
+"this page until MyArcadePlugin is done or the games will not be published."
+msgstr ""
+
+#: core/admin/admin-publish.php:261
+msgid "You must enable Javascript in order to proceed!"
+msgstr ""
+
+#: core/admin/admin-publish.php:270
+msgid "Abort Game Publishing"
+msgstr ""
+
+#: core/admin/admin-publish.php:302
+msgid "Stopping..."
+msgstr ""
+
+#: core/admin/admin-publish.php:361
+#, php-format
+msgid ""
+"Game publishing request was abnormally terminated (ID %s). This is likely "
+"due to the game exceeding available memory or some other type of fatal error."
+msgstr ""
+
+#: core/admin/admin-publish.php:394
+msgid "No games found for your search criteria!"
+msgstr ""
+
+#: core/admin/admin-settings.php:27 core/myarcade_admin.php:72
+#: core/myarcade_admin.php:73 myarcadeplugin.php:395
+msgid "Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:172
+msgid "Your settings have been updated!"
+msgstr ""
+
+#: core/admin/admin-settings.php:177
+msgid "Default settings have been restored!"
+msgstr ""
+
+#: core/admin/admin-settings.php:185
+msgid "Go to \"General Settings\" and activate some game categories!"
+msgstr ""
+
+#: core/admin/admin-settings.php:200
+#, php-format
+msgid ""
+"The games directory '%s' must be writable (chmod 777) in order to download "
+"games."
+msgstr ""
+
+#: core/admin/admin-settings.php:206
+#, php-format
+msgid ""
+"The images directory '%s' must be writable (chmod 777) in order to download "
+"game images."
+msgstr ""
+
+#: core/admin/admin-settings.php:212
+msgid ""
+"You have activated the Microsoft Translator but not entered your Azure Key. "
+"In this case the translator will not work!"
+msgstr ""
+
+#: core/admin/admin-settings.php:215
+msgid ""
+"You have activated the Google Translator but not entered your Google API "
+"Key. In this case the translator will not work!"
+msgstr ""
+
+#: core/admin/admin-settings.php:243
+msgid "Hourly"
+msgstr ""
+
+#: core/admin/admin-settings.php:244
+msgid "Twice Daily"
+msgstr ""
+
+#: core/admin/admin-settings.php:245
+msgid "Daily"
+msgstr ""
+
+#: core/admin/admin-settings.php:262
+msgid "General Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:267
+msgid "Save User Scores"
+msgstr ""
+
+#: core/admin/admin-settings.php:272
+msgid ""
+"Check this if you want to collect user scores. Only scores submitted by "
+"IBPArcade games will be collected."
+msgstr ""
+
+#: core/admin/admin-settings.php:275
+msgid "Save Only Highscores"
+msgstr ""
+
+#: core/admin/admin-settings.php:281
+msgid ""
+"Check this if you want to only save a user's highest score. Otherwise all "
+"submitted scores are saved."
+msgstr ""
+
+#: core/admin/admin-settings.php:284
+msgid "Game Types"
+msgstr ""
+
+#: core/admin/admin-settings.php:289
+msgid "All"
+msgstr ""
+
+#: core/admin/admin-settings.php:290
+msgid "Mobile only"
+msgstr ""
+
+#: core/admin/admin-settings.php:293
+msgid "Select a game type you want to fetch."
+msgstr ""
+
+#: core/admin/admin-settings.php:301
+msgid "How many games should be published when clicking on \"Publish Games\"?"
+msgstr ""
+
+#: core/admin/admin-settings.php:312
+msgid "Schedule Time"
+msgstr ""
+
+#: core/admin/admin-settings.php:314
+msgid ""
+"Choose the post status for new game publication. If you whish to schedule "
+"new game publication, indicate an interval between publications in minutes."
+msgstr ""
+
+#: core/admin/admin-settings.php:323
+msgid ""
+"Activate this in order to download Flash (SWF) games to your server. Keep in "
+"mind that HMTL5 games can't be downloaded."
+msgstr ""
+
+#: core/admin/admin-settings.php:332
+msgid ""
+"Should the game screenshots be imported and stored on your web server? For "
+"this to work properly, the thumb directory (wp-content/uploads/thumbs/) must "
+"be  writable."
+msgstr ""
+
+#: core/admin/admin-settings.php:335
+msgid "Folder Organization Structure"
+msgstr ""
+
+#: core/admin/admin-settings.php:341
+msgid ""
+"Define the folder structure for file downloads. Available variables are "
+"%game_type% and %alphabetical%. You can combine those variables like this: "
+"%game_type%/%alphabetical%/."
+msgstr ""
+
+#: core/admin/admin-settings.php:342
+msgid ""
+"That means, for each game type a new folder will be created and files will "
+"be organized in sub folders. Example: \"/games/fog/A/awesome_game.swf."
+msgstr ""
+
+#: core/admin/admin-settings.php:343
+msgid "Leave blank if you want to save all files in a single folder.\""
+msgstr ""
+
+#: core/admin/admin-settings.php:347
+msgid "Automation / Cron Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:348
+msgid ""
+"Global automation settings allows you to enable and setup automated fetching "
+"and publishing globally. You can enable/disable automated fetching and "
+"publishing for each game distributor separately when you click on "
+"distributors settings."
+msgstr ""
+
+#: core/admin/admin-settings.php:350 core/feeds/agf.php:57
+#: core/feeds/famobi.php:109 core/feeds/fog.php:106 core/feeds/fourj.php:76
+#: core/feeds/gamedistribution.php:159 core/feeds/gamemonetize.php:72
+#: core/feeds/scirra.php:68
+msgid "Automated Game Fetching"
+msgstr ""
+
+#: core/admin/admin-settings.php:356
+msgid ""
+"This option will activate automated game fetching globally. If activated the "
+"cron job will be triggered by WordPress."
+msgstr ""
+
+#: core/admin/admin-settings.php:359
+msgid "Game Fetching Interval"
+msgstr ""
+
+#: core/admin/admin-settings.php:373
+msgid ""
+"Select a frequency for fetching new games. Games are fetched per the "
+"scheduled frequency, pending a user visiting your site (which triggers the "
+"function)."
+msgstr ""
+
+#: core/admin/admin-settings.php:376 core/feeds/agf.php:75
+#: core/feeds/famobi.php:127 core/feeds/fog.php:124 core/feeds/fourj.php:93
+#: core/feeds/fourjrevshare.php:64 core/feeds/gamedistribution.php:176
+#: core/feeds/gamemonetize.php:89 core/feeds/gamepix.php:89
+#: core/feeds/htmlgames.php:74 core/feeds/kongregate.php:43
+#: core/feeds/playtomax.php:87 core/feeds/plinga.php:69
+#: core/feeds/scirra.php:86 core/feeds/softgames.php:138
+msgid "Automated Game Publishing"
+msgstr ""
+
+#: core/admin/admin-settings.php:382
+msgid ""
+"This option will activate automated game publishing globally. If activated "
+"the cron job will be triggered by WordPress."
+msgstr ""
+
+#: core/admin/admin-settings.php:385
+msgid "Game Publishing Interval"
+msgstr ""
+
+#: core/admin/admin-settings.php:399
+msgid ""
+"Select a frequency for publishing new games. Games are published per the "
+"scheduled frequency, pending a user visiting your site (which triggers the "
+"function)."
+msgstr ""
+
+#: core/admin/admin-settings.php:402
+msgid "Publish Games (Manually Imported Games)"
+msgstr ""
+
+#: core/admin/admin-settings.php:408
+msgid ""
+"How many games should be published on every cron trigger? This setting "
+"affects only manually imported games."
+msgstr ""
+
+#: core/admin/admin-settings.php:422
+msgid "Select game categories that should be fetched."
+msgstr ""
+
+#: core/admin/admin-settings.php:425
+msgid "Create Categories"
+msgstr ""
+
+#: core/admin/admin-settings.php:431
+msgid "Check this if you want to create selected categories on your blog."
+msgstr ""
+
+#: core/admin/admin-settings.php:435
+msgid "Parent Category"
+msgstr ""
+
+#: core/admin/admin-settings.php:439
+msgid "No Parent Category"
+msgstr ""
+
+#: core/admin/admin-settings.php:449
+msgid ""
+"This option will create game categories as subcategories in the selected "
+"category."
+msgstr ""
+
+#: core/admin/admin-settings.php:449
+msgid ""
+" This option is useful if you have a mixed site and not only a pure arcade "
+"site."
+msgstr ""
+
+#: core/admin/admin-settings.php:455
+msgid "Use Only The First Category"
+msgstr ""
+
+#: core/admin/admin-settings.php:462
+msgid ""
+"Many game developers tag their games to more than one category to get more "
+"downloads. Thereby the gamess will be added to several categories. Activate "
+"this option to avoid game publishing in more than one category."
+msgstr ""
+
+#: core/admin/admin-settings.php:465
+msgid "Max. Game Width (optional)"
+msgstr ""
+
+#: core/admin/admin-settings.php:471
+msgid ""
+"Maximum allowed game width in px. If set, the get_game function will create "
+"output code with adjusted game dimensions."
+msgstr ""
+
+#: core/admin/admin-settings.php:474
+msgid "Publish In A Single Category"
+msgstr ""
+
+#: core/admin/admin-settings.php:489
+msgid "This option will publish all games only in the selected category."
+msgstr ""
+
+#: core/admin/admin-settings.php:489
+msgid ""
+"This option is useful if you have a mixed site and not only a pure arcade "
+"site."
+msgstr ""
+
+#: core/admin/admin-settings.php:492
+msgid "Embed Game Code"
+msgstr ""
+
+#: core/admin/admin-settings.php:497
+msgid "Manually"
+msgstr ""
+
+#: core/admin/admin-settings.php:498
+msgid "At The Top Of A Game Post"
+msgstr ""
+
+#: core/admin/admin-settings.php:499
+msgid "At The Bottom Of A Game Post"
+msgstr ""
+
+#: core/admin/admin-settings.php:502
+msgid ""
+"Select if MyArcadePlugin should auto embed the game code in your game posts "
+"(only if you don't use FunGames theme)."
+msgstr ""
+
+#: core/admin/admin-settings.php:505
+msgid "Game Post Template"
+msgstr ""
+
+#: core/admin/admin-settings.php:509
+msgid "Activate Post Template"
+msgstr ""
+
+#: core/admin/admin-settings.php:514
+msgid ""
+"Use this template to style the output of MyArcadePlugin when creating game "
+"posts."
+msgstr ""
+
+#: core/admin/admin-settings.php:516
+msgid "Available Variables"
+msgstr ""
+
+#: core/admin/admin-settings.php:517
+msgid "Show the game title"
+msgstr ""
+
+#: core/admin/admin-settings.php:518
+msgid "Show game description"
+msgstr ""
+
+#: core/admin/admin-settings.php:519
+msgid "Show game instructions if available"
+msgstr ""
+
+#: core/admin/admin-settings.php:520
+msgid "Show all game tags"
+msgstr ""
+
+#: core/admin/admin-settings.php:521
+msgid "Show the game thumbnail"
+msgstr ""
+
+#: core/admin/admin-settings.php:522
+msgid "Show game thumbnail URL"
+msgstr ""
+
+#: core/admin/admin-settings.php:523
+msgid "Show game SWF URL / Embed Code"
+msgstr ""
+
+#: core/admin/admin-settings.php:524
+msgid "Show game width"
+msgstr ""
+
+#: core/admin/admin-settings.php:525
+msgid "Show game height"
+msgstr ""
+
+#: core/admin/admin-settings.php:532
+msgid "Disable Game Tags"
+msgstr ""
+
+#: core/admin/admin-settings.php:539
+msgid ""
+"Check this if you want to prevent MyArcadePlugin from adding tags to "
+"WordPress posts (not recommended)."
+msgstr ""
+
+#: core/admin/admin-settings.php:545
+msgid "Allow Users To Post Games"
+msgstr ""
+
+#: core/admin/admin-settings.php:552
+msgid ""
+"Activate this if you want to give your users access to import games. "
+"WordPress supports following user roles: Contributor, Author and Editor. "
+"Games added by Contributors will be saved as drafts! Authors and Editors "
+"will be able to publish games."
+msgstr ""
+
+#: core/admin/admin-settings.php:558
+msgid "Guest Plays"
+msgstr ""
+
+#: core/admin/admin-settings.php:565
+msgid ""
+"Set how many games a guest can play before he/she needs to register. Set to "
+"0 to deactivate the game play check."
+msgstr ""
+
+#: core/admin/admin-settings.php:571
+msgid "Guest Message"
+msgstr ""
+
+#: core/admin/admin-settings.php:578
+msgid ""
+"Enter the message here that you want a guest to see after 'X' number of "
+"plays (HTML allowed)"
+msgstr ""
+
+#: core/admin/admin-settings.php:584
+msgid "Game Play Delay"
+msgstr ""
+
+#: core/admin/admin-settings.php:591
+msgid ""
+"Game play delay is responsible for play and contest counter of a user. "
+"MyArcadePlugin will only count game plays when the delay time between two "
+"game plays is expired. Default value: 30 [time in seconds]."
+msgstr ""
+
+#: core/admin/admin-settings.php:597
+msgid "Post Type"
+msgstr ""
+
+#: core/admin/admin-settings.php:617
+msgid ""
+"Select a post type you want to use with MyArcadePlugin. If you want to use a "
+"custom post type then you will need to create it before you can make a "
+"selection. The easiest way to create a custom post type is to use a plugin "
+"like 'Custom Post Type UI'."
+msgstr ""
+
+#: core/admin/admin-settings.php:622
+msgid "Custom Taxonomies"
+msgstr ""
+
+#: core/admin/admin-settings.php:631
+msgid "No custom taxonomies found.."
+msgstr ""
+
+#: core/admin/admin-settings.php:648
+msgid "Select a custom taxonomy that should be used for game categories."
+msgstr ""
+
+#: core/admin/admin-settings.php:662
+msgid "Select a custom taxonomy that should be used for game tags."
+msgstr ""
+
+#: core/admin/admin-settings.php:671
+msgid "HTTP to HTTPS"
+msgstr ""
+
+#: core/admin/admin-settings.php:676
+msgid ""
+"Enable this if you have switched your site URL from HTTP to HTTPS. This "
+"option will replace HTTP with HTTPS in your game URLs. Keep in mind that now "
+"every game distributor supports SSL. Some games will not work with SSL."
+msgstr ""
+
+#: core/admin/admin-settings.php:680 core/admin/admin-settings.php:855
+#: core/feeds/agf.php:94 core/feeds/famobi.php:146 core/feeds/fog.php:143
+#: core/feeds/fourj.php:112 core/feeds/fourjrevshare.php:83
+#: core/feeds/gamedistribution.php:195 core/feeds/gamemonetize.php:108
+#: core/feeds/gamepix.php:108 core/feeds/htmlgames.php:93
+#: core/feeds/kongregate.php:62 core/feeds/myarcadefeed.php:79
+#: core/feeds/playtomax.php:106 core/feeds/plinga.php:88
+#: core/feeds/scirra.php:105 core/feeds/softgames.php:157
+msgid "Save Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:692
+msgid "Translation Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:699
+msgid ""
+"Translate games automatically to your language using the Microsoft "
+"Translator, Google Translate v2 (payed service) or Yandex Translation API. "
+"The translation is triggered when you click on 'Publish Games' or 'Publish'."
+msgstr ""
+
+#: core/admin/admin-settings.php:707
+msgid "Select Translation Service"
+msgstr ""
+
+#: core/admin/admin-settings.php:713
+msgid "Disable Translations"
+msgstr ""
+
+#: core/admin/admin-settings.php:714 core/translate.php:32
+#: core/translate.php:53 core/translate.php:73 core/translate.php:131
+#: core/translate.php:144 core/translate.php:150
+msgid "Microsoft Translator"
+msgstr ""
+
+#: core/admin/admin-settings.php:715
+msgid "Google Translator"
+msgstr ""
+
+#: core/admin/admin-settings.php:716
+msgid "Yandex Translator"
+msgstr ""
+
+#: core/admin/admin-settings.php:719
+msgid "Check this if you want to enable the translator."
+msgstr ""
+
+#: core/admin/admin-settings.php:723
+msgid "Game Fields To Translate"
+msgstr ""
+
+#: core/admin/admin-settings.php:726 core/admin/import_form.php:468
+#: core/editgame.php:188
+msgid "Name"
+msgstr ""
+
+#: core/admin/admin-settings.php:727
+msgid "Description"
+msgstr ""
+
+#: core/admin/admin-settings.php:728
+msgid "Instructions"
+msgstr ""
+
+#: core/admin/admin-settings.php:729 core/admin/import_form.php:544
+#: core/editgame.php:251
+msgid "Tags"
+msgstr ""
+
+#: core/admin/admin-settings.php:731
+msgid "Select game fields that you want to translate."
+msgstr ""
+
+#: core/admin/admin-settings.php:735
+msgid "Game Types To Translate"
+msgstr ""
+
+#: core/admin/admin-settings.php:742
+msgid "Select game types you want to translate."
+msgstr ""
+
+#: core/admin/admin-settings.php:748
+msgid "Microsoft Translator Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:751
+msgid ""
+"To be able to use Microsoft Translator you will need to register on Windows "
+"Azure Marketplace and sign up on the <a href='https://datamarket.azure.com' "
+"target='_blank'>Microsoft Translator</a>."
+msgstr ""
+
+#: core/admin/admin-settings.php:753
+msgid "Azure Key (Key 1)"
+msgstr ""
+
+#: core/admin/admin-settings.php:758
+msgid "Enter your Windows Azure Marketplace Client ID."
+msgstr ""
+
+#: core/admin/admin-settings.php:762 core/admin/admin-settings.php:799
+#: core/admin/admin-settings.php:835
+msgid "Target Language"
+msgstr ""
+
+#: core/admin/admin-settings.php:774
+msgid "ERROR: Can't find bing language file!"
+msgstr ""
+
+#: core/admin/admin-settings.php:778 core/admin/admin-settings.php:815
+#: core/admin/admin-settings.php:851
+msgid "Select the target language."
+msgstr ""
+
+#: core/admin/admin-settings.php:785
+msgid "Google Translator Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:789 core/admin/admin-settings.php:825
+msgid "API Key"
+msgstr ""
+
+#: core/admin/admin-settings.php:795
+msgid ""
+"To be able to use Google Translation API v2 you will need to enter your API "
+"Key. Google Translator API is a payed service: <a href=\"https://cloud."
+"google.com/translate/\" target=\"_blank\">Google Translate API</a>"
+msgstr ""
+
+#: core/admin/admin-settings.php:811 core/admin/admin-settings.php:847
+msgid "ERROR: Can't find google language file!"
+msgstr ""
+
+#: core/admin/admin-settings.php:821
+msgid "Yandex Translator Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:831
+msgid ""
+"To be able to use Yandex Translator you will need to enter your API Key. "
+"Yandex Translator is a free service. Click here to get an API key: <a href="
+"\"https://api.yandex.com/key/form.xml?service=trnsl\" target=\"_blank"
+"\">Yandex Translator</a>"
+msgstr ""
+
+#: core/admin/admin-settings.php:864
+msgid "Category Mapping"
+msgstr ""
+
+#: core/admin/admin-settings.php:920
+msgid ""
+"Map default categories to your own category names. This feature allows you "
+"to publish games in translated or summarized categories instead of using the "
+"predefined category names. (optional)"
+msgstr ""
+
+#: core/admin/admin-settings.php:926
+msgid "Feed Category"
+msgstr ""
+
+#: core/admin/admin-settings.php:927 core/admin/import_form.php:603
+#: core/editgame.php:266 core/feeds/famobi.php:52
+#: core/feeds/gamedistribution.php:84 core/feeds/gamemonetize.php:42
+#: core/feeds/gamepix.php:59 core/feeds/htmlgames.php:44
+#: core/feeds/playtomax.php:61 core/feeds/scirra.php:44
+#: core/feeds/softgames.php:77
+msgid "Category"
+msgstr ""
+
+#: core/admin/admin-settings.php:928
+msgid "Add Mapping"
+msgstr ""
+
+#: core/admin/admin-settings.php:929
+msgid "Current Mappings"
+msgstr ""
+
+#: core/admin/admin-settings.php:986
+msgid "The changes in this section are saved automatically."
+msgstr ""
+
+#: core/admin/admin-settings.php:1018
+msgid "Advanced Features"
+msgstr ""
+
+#: core/admin/admin-settings.php:1025
+msgid "Please, use this only if you know what you do!"
+msgstr ""
+
+#: core/admin/admin-settings.php:1031
+msgid "Delete All Feeded Games"
+msgstr ""
+
+#: core/admin/admin-settings.php:1036
+msgid "Reset Feeded Games"
+msgstr ""
+
+#: core/admin/admin-settings.php:1040
+msgid ""
+"Attention! All feeded or imported games will be deleted from the games "
+"database! Published posts will not be touched. After this score submitting "
+"of publiished games will stop working!"
+msgstr ""
+
+#: core/admin/admin-settings.php:1043
+msgid "Remove Games Marked as 'deleted'"
+msgstr ""
+
+#: core/admin/admin-settings.php:1048
+msgid "Remove 'deleted' Games"
+msgstr ""
+
+#: core/admin/admin-settings.php:1052
+msgid ""
+"Attention! All games marked as 'deleted' will be removed from the database!"
+msgstr ""
+
+#: core/admin/admin-settings.php:1056
+msgid "Delete Blank / Zero Scores"
+msgstr ""
+
+#: core/admin/admin-settings.php:1061
+msgid "Delete Zero Scores"
+msgstr ""
+
+#: core/admin/admin-settings.php:1065
+msgid ""
+"Clean your scores table. This will delete all zero and empty scores if "
+"present in your database."
+msgstr ""
+
+#: core/admin/admin-settings.php:1077
+msgid "Attention! All saved scores will be deleted!"
+msgstr ""
+
+#: core/admin/admin-settings.php:1080 core/admin/admin-settings.php:1087
+msgid "Load Default Settings"
+msgstr ""
+
+#: core/admin/admin-settings.php:1084
+msgid "Attention! All MyArcadePlugin settings will be reset to default!"
+msgstr ""
+
+#: core/admin/admin-settings.php:1117
+msgid "Game Feeds"
+msgstr ""
+
+#: core/admin/admin-settings.php:1117
+msgid "ordered alphabetically"
+msgstr ""
+
+#: core/admin/admin-settings.php:1159
+msgid "Can't create categories - Category array expected!"
+msgstr ""
+
+#: core/admin/admin-settings.php:1180 core/admin/admin-settings.php:1195
+msgid "Failed to create category:"
+msgstr ""
+
+#: core/admin/admin-settings.php:1271
+msgid ""
+"Security check failed. Please refresh the page and retry to submit settings "
+"again."
+msgstr ""
+
+#: core/admin/admin-stats.php:20 core/myarcade_admin.php:66
+#: core/myarcade_admin.php:67
+msgid "Statistics"
+msgstr ""
+
+#: core/admin/admin-stats.php:31
+#, php-format
+msgid "%sDisable site stats%s and relinquish the benefits."
+msgstr ""
+
+#: core/admin/import_form.php:11
+msgid "Add SWF or DCR Game"
+msgstr ""
+
+#: core/admin/import_form.php:21
+msgid "Flash or DCR Game"
+msgstr ""
+
+#: core/admin/import_form.php:21 core/admin/import_form.php:78
+#: core/admin/import_form.php:136 core/admin/import_form.php:194
+#: core/admin/import_form.php:248 core/admin/import_form.php:289
+#: core/admin/import_form.php:341 core/admin/import_form.php:468
+#: core/admin/import_form.php:510 core/admin/import_form.php:603
+#: core/editgame.php:188 core/editgame.php:221 core/editgame.php:266
+msgid "required"
+msgstr ""
+
+#: core/admin/import_form.php:24
+msgid ""
+"Important: A game file must be added prior to completing the other steps."
+msgstr ""
+
+#: core/admin/import_form.php:28
+msgid "Select a game file from your local computer (swf or dcr)."
+msgstr ""
+
+#: core/admin/import_form.php:29 core/admin/import_form.php:86
+#: core/admin/import_form.php:144 core/admin/import_form.php:202
+#: core/admin/import_form.php:297 core/admin/import_form.php:346
+msgid "Local File:"
+msgstr ""
+
+#: core/admin/import_form.php:34
+msgid ""
+"<strong>OR</strong> select an already uploaded file to (games/uploads/swf)."
+msgstr ""
+
+#: core/admin/import_form.php:37 core/admin/import_form.php:94
+#: core/admin/import_form.php:152 core/admin/import_form.php:210
+#: core/admin/import_form.php:305
+msgid "Select from folder"
+msgstr ""
+
+#: core/admin/import_form.php:38 core/admin/import_form.php:95
+#: core/admin/import_form.php:153 core/admin/import_form.php:211
+#: core/admin/import_form.php:306
+msgid "Cancel"
+msgstr ""
+
+#: core/admin/import_form.php:44
+msgid ""
+"<strong>OR</strong> paste a URL to import a game file from the internet( swf "
+"or dcr)."
+msgstr ""
+
+#: core/admin/import_form.php:45 core/admin/import_form.php:102
+#: core/admin/import_form.php:160 core/admin/import_form.php:218
+#: core/admin/import_form.php:313 core/admin/import_form.php:352
+msgid "URL:"
+msgstr ""
+
+#: core/admin/import_form.php:51 core/admin/import_form.php:108
+#: core/admin/import_form.php:166 core/admin/import_form.php:224
+#: core/admin/import_form.php:319 core/admin/import_form.php:358
+msgid "Add File"
+msgstr ""
+
+#: core/admin/import_form.php:69
+msgid "Add HTML5 Game (zip file) "
+msgstr ""
+
+#: core/admin/import_form.php:78
+msgid "HTML5 Game (zip file)"
+msgstr ""
+
+#: core/admin/import_form.php:81
+msgid ""
+"Import a HTML5 Game in zip format. The ZIP file should contain at least an "
+"index.html file."
+msgstr ""
+
+#: core/admin/import_form.php:81 core/admin/import_form.php:197
+msgid "Important: add a ZIP file first before you do anything else."
+msgstr ""
+
+#: core/admin/import_form.php:85 core/admin/import_form.php:201
+msgid "Select a ZIP file from your local computer."
+msgstr ""
+
+#: core/admin/import_form.php:91
+msgid ""
+"<strong>OR</strong> select an already uploaded file to (games/uploads/html5)."
+msgstr ""
+
+#: core/admin/import_form.php:101 core/admin/import_form.php:217
+msgid ""
+"<strong>OR</strong> paste a URL to import an ZIP game from the internet."
+msgstr ""
+
+#: core/admin/import_form.php:127
+msgid "Add IBPArcade Game"
+msgstr ""
+
+#: core/admin/import_form.php:136
+msgid "IBPArcade Game (tar file)"
+msgstr ""
+
+#: core/admin/import_form.php:139
+msgid ""
+"Important: An IBPArcade file must be added prior to completing the other "
+"steps."
+msgstr ""
+
+#: core/admin/import_form.php:143
+msgid "Select an IBPArcade file from your local computer (TAR)."
+msgstr ""
+
+#: core/admin/import_form.php:149
+msgid ""
+"<strong>OR</strong> select an already uploaded file to (games/uploads/"
+"ibparcade)."
+msgstr ""
+
+#: core/admin/import_form.php:159
+msgid ""
+"<strong>OR</strong> paste a URL to import an IBPArcade game from the "
+"internet (TAR)."
+msgstr ""
+
+#: core/admin/import_form.php:185
+msgid "Add PHPBB Game (zip file) "
+msgstr ""
+
+#: core/admin/import_form.php:194
+msgid "PHPBB Game (zip file)"
+msgstr ""
+
+#: core/admin/import_form.php:197
+msgid ""
+"Import a PHPBB Game in zip format. The ZIP file should contain a swf file "
+"and a thumbnail image."
+msgstr ""
+
+#: core/admin/import_form.php:207
+msgid ""
+"<strong>OR</strong> select an already uploaded file to (games/uploads/phpbb)."
+msgstr ""
+
+#: core/admin/import_form.php:239
+msgid "Add Embed Code / Iframe URL"
+msgstr ""
+
+#: core/admin/import_form.php:248
+msgid "Game Code"
+msgstr ""
+
+#: core/admin/import_form.php:254
+msgid ""
+"Paste here a complete embed code or an iframe URL and click on 'Add Code'."
+msgstr ""
+
+#: core/admin/import_form.php:260
+msgid "Add Code"
+msgstr ""
+
+#: core/admin/import_form.php:280
+msgid "Add Unity3D Game"
+msgstr ""
+
+#: core/admin/import_form.php:289
+msgid "Import Unity Games"
+msgstr ""
+
+#: core/admin/import_form.php:292
+msgid ""
+"Important: A Unity file (.unity3d) must be added prior to completing the "
+"other steps."
+msgstr ""
+
+#: core/admin/import_form.php:296
+msgid "Select a Unity file (.unity3d) from your local computer."
+msgstr ""
+
+#: core/admin/import_form.php:302
+msgid ""
+"<strong>OR</strong> select an already uploaded file to (games/uploads/unity)."
+msgstr ""
+
+#: core/admin/import_form.php:312
+msgid ""
+"<strong>OR</strong> paste a URL to import an Unity game from the internet (."
+"unity3d)."
+msgstr ""
+
+#: core/admin/import_form.php:345
+msgid "Select a thumbnail from your local computer."
+msgstr ""
+
+#: core/admin/import_form.php:351
+msgid ""
+"<strong>OR</strong> paste a URL to import a thumbnail from the internet."
+msgstr ""
+
+#: core/admin/import_form.php:378
+msgid "Game Screenshots"
+msgstr ""
+
+#: core/admin/import_form.php:382
+msgid "Select image files from your local computer"
+msgstr ""
+
+#: core/admin/import_form.php:386 core/admin/import_form.php:392
+#: core/admin/import_form.php:398 core/admin/import_form.php:404
+msgid "Screenshot"
+msgstr ""
+
+#: core/admin/import_form.php:410
+msgid ""
+"<strong>OR</strong> paste URL's to import screenshots from the internet."
+msgstr ""
+
+#: core/admin/import_form.php:414 core/admin/import_form.php:420
+#: core/admin/import_form.php:426 core/admin/import_form.php:432
+msgid "Screenshot URL"
+msgstr ""
+
+#: core/admin/import_form.php:439
+msgid "Add File(s)"
+msgstr ""
+
+#: core/admin/import_form.php:451
+msgid "Game Information"
+msgstr ""
+
+#: core/admin/import_form.php:474
+msgid "Enter the name of the imported game."
+msgstr ""
+
+#: core/admin/import_form.php:485 core/editgame.php:203
+msgid "Game Dimensions"
+msgstr ""
+
+#: core/admin/import_form.php:489 core/editgame.php:207
+msgid "Game width (px)"
+msgstr ""
+
+#: core/admin/import_form.php:492 core/editgame.php:210
+msgid "Game height (px)"
+msgstr ""
+
+#: core/admin/import_form.php:498
+msgid ""
+"If MyArcadePlugin is unable to detect dimensions for the flash files "
+"automatically, the dimensions should be indicated manually."
+msgstr ""
+
+#: core/admin/import_form.php:516
+msgid ""
+"Enter description of the game (a unique description can help improve search "
+"engine ranking)."
+msgstr ""
+
+#: core/admin/import_form.php:533
+msgid "Write brief instructions on how to play the game."
+msgstr ""
+
+#: core/admin/import_form.php:550
+msgid "Enter description tags. Separate the tags with commas (,)."
+msgstr ""
+
+#: core/admin/import_form.php:561
+msgid "Game Video"
+msgstr ""
+
+#: core/admin/import_form.php:567
+msgid "Enter a game video URL (Youtube, Vimeo...) if available."
+msgstr ""
+
+#: core/admin/import_form.php:590
+msgid "Save as draft"
+msgstr ""
+
+#: core/admin/import_form.php:592
+msgid "Add to the games database (don't add as a blog post)"
+msgstr ""
+
+#: core/admin/import_form.php:618
+msgid "Select one or more categories for this game."
+msgstr ""
+
+#: core/admin/import_form.php:629
+msgid "Score Options"
+msgstr ""
+
+#: core/admin/import_form.php:634 core/editgame.php:327
+msgid "Yes - This game is able to submit scores"
+msgstr ""
+
+#: core/admin/import_form.php:638 core/editgame.php:335
+msgid "DESC (High to Low)"
+msgstr ""
+
+#: core/admin/import_form.php:639 core/editgame.php:336
+msgid "ASC (Low to High)"
+msgstr ""
+
+#: core/admin/import_form.php:649
+msgid "Import Game"
+msgstr ""
+
+#: core/admin/import_handler.php:48
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini."
+msgstr ""
+
+#: core/admin/import_handler.php:49
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form."
+msgstr ""
+
+#: core/admin/import_handler.php:50
+msgid "The uploaded file was only partially uploaded."
+msgstr ""
+
+#: core/admin/import_handler.php:51
+msgid "No file was uploaded."
+msgstr ""
+
+#: core/admin/import_handler.php:53
+msgid "Missing a temporary folder."
+msgstr ""
+
+#: core/admin/import_handler.php:54
+msgid "Failed to write file to disk."
+msgstr ""
+
+#: core/admin/import_handler.php:55
+msgid "File upload stopped by extension."
+msgstr ""
+
+#: core/admin/import_handler.php:113 core/admin/import_handler.php:312
+#: core/admin/import_handler.php:562 core/admin/import_handler.php:900
+#: core/admin/import_handler.php:967
+msgid "Can't find the selected file."
+msgstr ""
+
+#: core/admin/import_handler.php:158
+msgid "Can not upload file!"
+msgstr ""
+
+#: core/admin/import_handler.php:376 core/admin/import_handler.php:664
+msgid "This game already exists in your database!"
+msgstr ""
+
+#: core/admin/import_handler.php:410
+msgid "Can't find required game files."
+msgstr ""
+
+#: core/admin/import_handler.php:748
+msgid "Invalid PHPBB config file!"
+msgstr ""
+
+#: core/editgame.php:34 core/editgame.php:176 core/editscore.php:30
+msgid "Edit Game"
+msgstr ""
+
+#: core/editgame.php:145
+msgid "Game has been updated!"
+msgstr ""
+
+#: core/editgame.php:148
+msgid "Can't update the game!"
+msgstr ""
+
+#: core/editgame.php:166 core/editgame.php:373 core/editscore.php:97
+msgid "Save Changes"
+msgstr ""
+
+#: core/editgame.php:184
+msgid ""
+"You are about to edit a published game. Thereby, will only be able to change "
+"the score settings."
+msgstr ""
+
+#: core/editgame.php:323
+msgid "Highscore Settings"
+msgstr ""
+
+#: core/editgame.php:333
+msgid "Score Order (Highscore Type)"
+msgstr ""
+
+#: core/editscore.php:62
+msgid "Score has been updated!"
+msgstr ""
+
+#: core/editscore.php:72
+msgid "Can't update score!"
+msgstr ""
+
+#: core/feeds/agf.php:24
+msgid "Arcade Game Feed (AGF)"
+msgstr ""
+
+#: core/feeds/agf.php:31 core/feeds/kongregate.php:29
+#, php-format
+msgid "%s distributes Flash games."
+msgstr ""
+
+#: core/feeds/agf.php:36 core/feeds/famobi.php:36 core/feeds/fog.php:37
+#: core/feeds/fourj.php:52 core/feeds/fourjrevshare.php:48
+#: core/feeds/gamedistribution.php:62 core/feeds/gamemonetize.php:34
+#: core/feeds/gamepix.php:43 core/feeds/htmlgames.php:36
+#: core/feeds/kongregate.php:34 core/feeds/playtomax.php:53
+#: core/feeds/plinga.php:53 core/feeds/scirra.php:36
+#: core/feeds/softgames.php:61
+msgid "Feed URL"
+msgstr ""
+
+#: core/feeds/agf.php:42 core/feeds/famobi.php:41 core/feeds/fog.php:42
+#: core/feeds/fourj.php:57 core/feeds/fourjrevshare.php:53
+#: core/feeds/gamedistribution.php:67 core/feeds/gamemonetize.php:39
+#: core/feeds/gamepix.php:48 core/feeds/htmlgames.php:41
+#: core/feeds/kongregate.php:40 core/feeds/playtomax.php:58
+#: core/feeds/plinga.php:58 core/feeds/scirra.php:41
+#: core/feeds/softgames.php:66
+msgid "Edit this field only if Feed URL has been changed!"
+msgstr ""
+
+#: core/feeds/agf.php:45 core/feeds/famobi.php:82 core/feeds/fog.php:45
+#: core/feeds/gamepix.php:77 core/feeds/htmlgames.php:61
+#: core/feeds/softgames.php:124
+msgid "Thumbnail Size"
+msgstr ""
+
+#: core/feeds/agf.php:50 core/feeds/gamepix.php:82
+msgid "100x100"
+msgstr ""
+
+#: core/feeds/agf.php:51
+msgid "180x135"
+msgstr ""
+
+#: core/feeds/agf.php:54 core/feeds/gamepix.php:86 core/feeds/htmlgames.php:71
+#: core/feeds/softgames.php:135
+msgid "Select a thumbnail size."
+msgstr ""
+
+#: core/feeds/agf.php:63 core/feeds/famobi.php:115 core/feeds/fog.php:112
+#: core/feeds/fourj.php:81 core/feeds/gamedistribution.php:164
+#: core/feeds/gamemonetize.php:77 core/feeds/scirra.php:74
+msgid ""
+"Enable this if you want to fetch games automatically. Go to 'General "
+"Settings' to select a cron interval."
+msgstr ""
+
+#: core/feeds/agf.php:72 core/feeds/famobi.php:124 core/feeds/fog.php:121
+#: core/feeds/fourj.php:90 core/feeds/gamedistribution.php:173
+#: core/feeds/gamemonetize.php:86 core/feeds/scirra.php:83
+msgid "How many games should be fetched on every cron trigger?"
+msgstr ""
+
+#: core/feeds/agf.php:81 core/feeds/famobi.php:133 core/feeds/fog.php:130
+#: core/feeds/fourj.php:99 core/feeds/fourjrevshare.php:70
+#: core/feeds/gamedistribution.php:182 core/feeds/gamemonetize.php:95
+#: core/feeds/gamepix.php:95 core/feeds/htmlgames.php:80
+#: core/feeds/kongregate.php:49 core/feeds/playtomax.php:93
+#: core/feeds/plinga.php:75 core/feeds/scirra.php:92
+#: core/feeds/softgames.php:144
+msgid ""
+"Enable this if you want to publish games automatically. Go to 'General "
+"Settings' to select a cron interval."
+msgstr ""
+
+#: core/feeds/agf.php:90 core/feeds/famobi.php:142 core/feeds/fog.php:139
+#: core/feeds/fourj.php:108 core/feeds/fourjrevshare.php:79
+#: core/feeds/gamedistribution.php:191 core/feeds/gamemonetize.php:104
+#: core/feeds/gamepix.php:104 core/feeds/htmlgames.php:89
+#: core/feeds/kongregate.php:58 core/feeds/playtomax.php:102
+#: core/feeds/plinga.php:84 core/feeds/scirra.php:101
+#: core/feeds/softgames.php:153
+msgid "How many games should be published on every cron trigger?"
+msgstr ""
+
+#: core/feeds/famobi.php:24
+msgid "Famobi"
+msgstr ""
+
+#: core/feeds/famobi.php:31 core/feeds/gamepix.php:38
+#: core/feeds/htmlgames.php:31 core/feeds/playtomax.php:48
+#: core/feeds/plinga.php:48 core/feeds/softgames.php:56
+#, php-format
+msgid "%s distributes HTML5 games."
+msgstr ""
+
+#: core/feeds/famobi.php:44
+msgid "Affiliate ID"
+msgstr ""
+
+#: core/feeds/famobi.php:49
+msgid "Enter your Affiliate ID if available."
+msgstr ""
+
+#: core/feeds/famobi.php:57 core/feeds/gamemonetize.php:47
+#: core/feeds/gamepix.php:64 core/feeds/htmlgames.php:49
+#: core/feeds/scirra.php:49
+msgid "All Games"
+msgstr ""
+
+#: core/feeds/famobi.php:58 core/feeds/gamemonetize.php:51
+#: core/feeds/scirra.php:50
+msgid "Action"
+msgstr ""
+
+#: core/feeds/famobi.php:59 core/feeds/gamemonetize.php:53
+#: core/feeds/gamepix.php:65
+msgid "Arcade"
+msgstr ""
+
+#: core/feeds/famobi.php:60
+msgid "Best"
+msgstr ""
+
+#: core/feeds/famobi.php:61
+msgid "Breakout"
+msgstr ""
+
+#: core/feeds/famobi.php:62
+msgid "Bubble Shooter"
+msgstr ""
+
+#: core/feeds/famobi.php:63
+msgid "Cards"
+msgstr ""
+
+#: core/feeds/famobi.php:64
+msgid "Cars"
+msgstr ""
+
+#: core/feeds/famobi.php:65 core/feeds/gamemonetize.php:57
+msgid "Cooking"
+msgstr ""
+
+#: core/feeds/famobi.php:66
+msgid "Dress-up"
+msgstr ""
+
+#: core/feeds/famobi.php:67 core/feeds/gamemonetize.php:58
+msgid "Girls"
+msgstr ""
+
+#: core/feeds/famobi.php:68
+msgid "Jump & Run"
+msgstr ""
+
+#: core/feeds/famobi.php:69
+msgid "Make-up"
+msgstr ""
+
+#: core/feeds/famobi.php:70
+msgid "Match-3"
+msgstr ""
+
+#: core/feeds/famobi.php:71 core/feeds/gamemonetize.php:60
+#: core/feeds/scirra.php:53
+msgid "Multiplayer"
+msgstr ""
+
+#: core/feeds/famobi.php:72
+msgid "New"
+msgstr ""
+
+#: core/feeds/famobi.php:73 core/feeds/gamemonetize.php:61
+#: core/feeds/scirra.php:55
+msgid "Puzzle"
+msgstr ""
+
+#: core/feeds/famobi.php:74
+msgid "Quiz"
+msgstr ""
+
+#: core/feeds/famobi.php:75 core/feeds/gamemonetize.php:62
+#: core/feeds/scirra.php:56
+msgid "Racing"
+msgstr ""
+
+#: core/feeds/famobi.php:76 core/feeds/gamemonetize.php:65
+#: core/feeds/gamepix.php:70 core/feeds/scirra.php:59
+msgid "Sports"
+msgstr ""
+
+#: core/feeds/famobi.php:79 core/feeds/gamedistribution.php:156
+#: core/feeds/gamemonetize.php:69 core/feeds/gamepix.php:74
+#: core/feeds/htmlgames.php:58 core/feeds/playtomax.php:84
+#: core/feeds/scirra.php:65 core/feeds/softgames.php:121
+msgid "Select which games you would like to fetch."
+msgstr ""
+
+#: core/feeds/famobi.php:87
+msgid "Small (60x60)"
+msgstr ""
+
+#: core/feeds/famobi.php:88
+msgid "Medium (120x120)"
+msgstr ""
+
+#: core/feeds/famobi.php:89
+msgid "Large (180x180)"
+msgstr ""
+
+#: core/feeds/famobi.php:90
+msgid "Extra Large (360x360)"
+msgstr ""
+
+#: core/feeds/famobi.php:93
+msgid "Select a thumbnail size (Default 120x120)."
+msgstr ""
+
+#: core/feeds/famobi.php:96 core/feeds/fog.php:88
+msgid "Language"
+msgstr ""
+
+#: core/feeds/famobi.php:101 core/feeds/fog.php:94
+msgid "English"
+msgstr ""
+
+#: core/feeds/famobi.php:102 core/feeds/fog.php:96
+msgid "German"
+msgstr ""
+
+#: core/feeds/famobi.php:103
+msgid "Turkish"
+msgstr ""
+
+#: core/feeds/famobi.php:106 core/feeds/fog.php:103
+msgid "Select a game language."
+msgstr ""
+
+#: core/feeds/famobi.php:215 core/feeds/fog.php:215 core/feeds/fourj.php:173
+#: core/feeds/gamedistribution.php:257 core/feeds/scirra.php:170
+msgid "Latest Games"
+msgstr ""
+
+#: core/feeds/famobi.php:218 core/feeds/fourj.php:176
+#: core/feeds/gamedistribution.php:260 core/feeds/scirra.php:173
+msgid "Use Offset"
+msgstr ""
+
+#: core/feeds/fog.php:23
+msgid "FreeGamesForYourWebsite (FOG)"
+msgstr ""
+
+#: core/feeds/fog.php:31
+#, php-format
+msgid "%s distributes Flash and Unity3D games."
+msgstr ""
+
+#: core/feeds/fog.php:50
+msgid "Small (100x100)"
+msgstr ""
+
+#: core/feeds/fog.php:51
+msgid "Medium (180x135)"
+msgstr ""
+
+#: core/feeds/fog.php:52
+msgid "Large (300x300)"
+msgstr ""
+
+#: core/feeds/fog.php:55
+msgid ""
+"Select the size of the thumbnails that should be used for games from "
+"FreeGamesForYourWebsite. Default size is small (100x100)."
+msgstr ""
+
+#: core/feeds/fog.php:58
+msgid "Use Large Thumbnails as Screenshots"
+msgstr ""
+
+#: core/feeds/fog.php:64
+msgid ""
+"Check this if you want to use large thumbnails (300x300px) from the feed as "
+"game screenshots"
+msgstr ""
+
+#: core/feeds/fog.php:73
+msgid "3D Games"
+msgstr ""
+
+#: core/feeds/fog.php:74
+msgid "Adventure Games"
+msgstr ""
+
+#: core/feeds/fog.php:75
+msgid "Defense Games"
+msgstr ""
+
+#: core/feeds/fog.php:76
+msgid "Driving Games"
+msgstr ""
+
+#: core/feeds/fog.php:77
+msgid "Flying Games"
+msgstr ""
+
+#: core/feeds/fog.php:78
+msgid "Multiplayer Games"
+msgstr ""
+
+#: core/feeds/fog.php:79
+msgid "Puzzle Games"
+msgstr ""
+
+#: core/feeds/fog.php:80
+msgid "Shooting Games"
+msgstr ""
+
+#: core/feeds/fog.php:81
+msgid "Sports Games"
+msgstr ""
+
+#: core/feeds/fog.php:82
+msgid "Unity Games"
+msgstr ""
+
+#: core/feeds/fog.php:85
+msgid ""
+"Select a game category that you would like to fetch from "
+"FreeGamesForYourWebsite."
+msgstr ""
+
+#: core/feeds/fog.php:93
+msgid "Arabic"
+msgstr ""
+
+#: core/feeds/fog.php:95
+msgid "French"
+msgstr ""
+
+#: core/feeds/fog.php:97
+msgid "Greek"
+msgstr ""
+
+#: core/feeds/fog.php:98
+msgid "Romanian"
+msgstr ""
+
+#: core/feeds/fog.php:99
+msgid "Spanish"
+msgstr ""
+
+#: core/feeds/fog.php:100
+msgid "Urdu"
+msgstr ""
+
+#: core/feeds/fourj.php:40
+msgid "4J"
+msgstr ""
+
+#: core/feeds/fourj.php:47
+#, php-format
+msgid "%s distributes Flash, WebGL, Unity3D and HTML5 games."
+msgstr ""
+
+#: core/feeds/fourj.php:60
+msgid "Without Advertisements"
+msgstr ""
+
+#: core/feeds/fourj.php:65
+msgid "Enable this if you want to fetch only games without advertisements."
+msgstr ""
+
+#: core/feeds/fourj.php:68
+msgid "Contain Copyrighted Content"
+msgstr ""
+
+#: core/feeds/fourj.php:73
+msgid ""
+"Enable this if you want to fetch games that also contain copyrighted content."
+msgstr ""
+
+#: core/feeds/fourjrevshare.php:36
+msgid "4J (Revenue Share)"
+msgstr ""
+
+#: core/feeds/fourjrevshare.php:43
+#, php-format
+msgid "This feed is for registered %s users with a valid publisher ID only."
+msgstr ""
+
+#: core/feeds/fourjrevshare.php:56 core/feeds/softgames.php:69
+msgid "Publisher ID"
+msgstr ""
+
+#: core/feeds/fourjrevshare.php:61
+msgid ""
+"Enter your publisher ID here. This is required in order to make money with "
+"4J."
+msgstr ""
+
+#: core/feeds/gamedistribution.php:50
+msgid "GameDistribution"
+msgstr ""
+
+#: core/feeds/gamedistribution.php:57
+#, php-format
+msgid ""
+"%s distributes Flash and HTML5 games. In order to earn money with "
+"GameDistribution's games you will need to join the partner program %shere%s"
+msgstr ""
+
+#: core/feeds/gamedistribution.php:70
+msgid "Collection"
+msgstr ""
+
+#: core/feeds/gamedistribution.php:75 core/feeds/gamedistribution.php:88
+#: core/feeds/playtomax.php:65 core/feeds/softgames.php:81
+msgid "All games"
+msgstr ""
+
+#: core/feeds/gamedistribution.php:76
+msgid "Exclusive games"
+msgstr ""
+
+#: core/feeds/gamedistribution.php:77
+msgid "Best new games"
+msgstr ""
+
+#: core/feeds/gamedistribution.php:78
+msgid "Hot Games"
+msgstr ""
+
+#: core/feeds/gamedistribution.php:81
+msgid "Select game collections."
+msgstr ""
+
+#: core/feeds/gamemonetize.php:22
+msgid "GameMonetize"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:29
+#, php-format
+msgid "%s distributes HTML5 and mobile games."
+msgstr ""
+
+#: core/feeds/gamemonetize.php:48
+msgid ".IO"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:49
+msgid "2 Player"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:50
+msgid "3D"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:52 core/feeds/gamepix.php:66
+#: core/feeds/scirra.php:51
+msgid "Adventure"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:54
+msgid "Bejeweled"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:55
+msgid "Boys"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:56
+msgid "Clicker"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:59
+msgid "Hypercasual"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:63 core/feeds/scirra.php:58
+msgid "Shooting"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:64
+msgid "Soccer"
+msgstr ""
+
+#: core/feeds/gamemonetize.php:66
+msgid "Stickman"
+msgstr ""
+
+#: core/feeds/gamepix.php:31
+msgid "GamePix"
+msgstr ""
+
+#: core/feeds/gamepix.php:51
+msgid "Site ID"
+msgstr ""
+
+#: core/feeds/gamepix.php:56
+msgid "Enter your Site ID if available."
+msgstr ""
+
+#: core/feeds/gamepix.php:67
+msgid "Casino"
+msgstr ""
+
+#: core/feeds/gamepix.php:68
+msgid "Classics"
+msgstr ""
+
+#: core/feeds/gamepix.php:69
+msgid "Puzzles"
+msgstr ""
+
+#: core/feeds/gamepix.php:71 core/feeds/scirra.php:60
+msgid "Strategy"
+msgstr ""
+
+#: core/feeds/gamepix.php:83
+msgid "250x250"
+msgstr ""
+
+#: core/feeds/htmlgames.php:24
+msgid "HTML Games"
+msgstr ""
+
+#: core/feeds/htmlgames.php:50
+msgid "Classic games"
+msgstr ""
+
+#: core/feeds/htmlgames.php:51
+msgid "Hidden objects"
+msgstr ""
+
+#: core/feeds/htmlgames.php:52
+msgid "Mahjong"
+msgstr ""
+
+#: core/feeds/htmlgames.php:53
+msgid "Match 3 games"
+msgstr ""
+
+#: core/feeds/htmlgames.php:54
+msgid "Mind games"
+msgstr ""
+
+#: core/feeds/htmlgames.php:55
+msgid "Solitaire"
+msgstr ""
+
+#: core/feeds/htmlgames.php:66 core/feeds/softgames.php:130
+msgid "120x120"
+msgstr ""
+
+#: core/feeds/htmlgames.php:67
+msgid "196x196"
+msgstr ""
+
+#: core/feeds/htmlgames.php:68
+msgid "300x200"
+msgstr ""
+
+#: core/feeds/kongregate.php:22
+msgid "Kongregate"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:23
+msgid "MyArcadeFeed"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:30
+msgid "Add up to five Feeds generated with MyArcadeFeed Plugin."
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:36
+msgid "MyArcadeFeed URL 1"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:41
+msgid "Paste your MyArcadeFeed URL No. 1 here."
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:43
+msgid "MyArcadeFeed URL 2"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:48
+msgid "Paste your MyArcadeFeed URL No. 2 here."
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:50
+msgid "MyArcadeFeed URL 3"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:55
+msgid "Paste your MyArcadeFeed URL No. 3 here."
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:57
+msgid "MyArcadeFeed URL 4"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:62
+msgid "Paste your MyArcadeFeed URL No. 4 here."
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:64
+msgid "MyArcadeFeed URL 5"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:69
+msgid "Paste your MyArcadeFeed URL No. 5 here."
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:71
+msgid "Fetch All Categories"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:76
+msgid ""
+"Activate this if you want to fetch all games independent of your activated "
+"categories."
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:148
+msgid "Select a Feed:"
+msgstr ""
+
+#: core/feeds/myarcadefeed.php:161
+msgid "No MyArcadeFeed URLs found!"
+msgstr ""
+
+#: core/feeds/playtomax.php:41
+msgid "PlayToMax"
+msgstr ""
+
+#: core/feeds/plinga.php:41
+msgid "Plinga"
+msgstr ""
+
+#: core/feeds/plinga.php:61
+msgid "Platform ID"
+msgstr ""
+
+#: core/feeds/plinga.php:66
+msgid "Enter your Platform ID if available."
+msgstr ""
+
+#: core/feeds/scirra.php:23
+msgid "Scirra"
+msgstr ""
+
+#: core/feeds/scirra.php:30
+#, php-format
+msgid "%s distributes Flash and HTML5 games."
+msgstr ""
+
+#: core/feeds/scirra.php:52
+msgid "Fighting"
+msgstr ""
+
+#: core/feeds/scirra.php:54
+msgid "Music"
+msgstr ""
+
+#: core/feeds/scirra.php:57
+msgid "RPG"
+msgstr ""
+
+#: core/feeds/scirra.php:61
+msgid "Tutorial"
+msgstr ""
+
+#: core/feeds/scirra.php:62
+msgid "Other"
+msgstr ""
+
+#: core/feeds/scirra.php:180
+msgid "Game Order"
+msgstr ""
+
+#: core/feeds/scirra.php:183
+msgid "Oldest games first"
+msgstr ""
+
+#: core/feeds/scirra.php:184
+msgid "Newest games first"
+msgstr ""
+
+#: core/feeds/scirra.php:185
+msgid "Alphabetically"
+msgstr ""
+
+#: core/feeds/scirra.php:186
+msgid "Reverse alphabetical"
+msgstr ""
+
+#: core/feeds/scirra.php:187
+msgid "Fewest unique players"
+msgstr ""
+
+#: core/feeds/scirra.php:188
+msgid "Most unique players"
+msgstr ""
+
+#: core/feeds/scirra.php:189
+msgid "Highest rated games first"
+msgstr ""
+
+#: core/feeds/scirra.php:190
+msgid "Hottest games first"
+msgstr ""
+
+#: core/feeds/scirra.php:195
+msgid "Only Mobile Games"
+msgstr ""
+
+#: core/feeds/softgames.php:49
+msgid "Softgames"
+msgstr ""
+
+#: core/feeds/softgames.php:74
+msgid "Enter your Publisher ID if available."
+msgstr ""
+
+#: core/feeds/softgames.php:129
+msgid "60x60"
+msgstr ""
+
+#: core/feeds/softgames.php:131
+msgid "300x180"
+msgstr ""
+
+#: core/feeds/softgames.php:132
+msgid "520x520"
+msgstr ""
+
+#: core/fetch.php:30
+#, php-format
+msgid "You need at least PHP %s to run this plugin."
+msgstr ""
+
+#: core/fetch.php:32
+#, php-format
+msgid "You have %s installed."
+msgstr ""
+
+#: core/fetch.php:34
+msgid "Contact your administrator to update your PHP version."
+msgstr ""
+
+#: core/fetch.php:38
+msgid ""
+"JSON Support is disabeld in your PHP configuration. Please contact your "
+"administrator to activate JSON Support."
+msgstr ""
+
+#: core/fetch.php:70
+msgid "No Feed URL provided!"
+msgstr ""
+
+#: core/fetch.php:97 core/fetch.php:167
+msgid "Your Feed URL"
+msgstr ""
+
+#: core/fetch.php:102 core/fetch.php:172
+msgid "Downloading feed"
+msgstr ""
+
+#: core/fetch.php:111 core/fetch.php:181
+msgid "ERROR"
+msgstr ""
+
+#: core/fetch.php:122 core/fetch.php:194
+msgid "Can't download feed!"
+msgstr ""
+
+#: core/fetch.php:133 core/fetch.php:205
+msgid "Decode feed"
+msgstr ""
+
+#: core/fetch.php:149 core/fetch.php:219
+msgid "Failed to decode the downloaded feed!"
+msgstr ""
+
+#: core/file.php:177
+msgid "File not found"
+msgstr ""
+
+#: core/file.php:277
+#, php-format
+msgid "Your server settings allow you to upload files up to %s."
+msgstr ""
+
+#: core/file.php:347
+msgid "No files found!"
+msgstr ""
+
+#: core/myarcade_admin.php:44 core/myarcade_admin.php:45
+msgid "Import Games"
+msgstr ""
+
+#: core/myarcade_admin.php:181
+msgid "Error: Can not import that game!"
+msgstr ""
+
+#: core/myarcade_admin.php:182
+msgid "No game file added!"
+msgstr ""
+
+#: core/myarcade_admin.php:183
+msgid "No thumbnail added!"
+msgstr ""
+
+#: core/myarcade_admin.php:184
+msgid "Game name not set!"
+msgstr ""
+
+#: core/myarcade_admin.php:185
+msgid "There is no game description!"
+msgstr ""
+
+#: core/myarcade_admin.php:186
+msgid "Select at least one category!"
+msgstr ""
+
+#: core/myarcade_admin.php:187
+msgid "ERROR: Max allowed file size exceeded!"
+msgstr ""
+
+#: core/myarcade_admin.php:188
+msgid "Error:"
+msgstr ""
+
+#: core/myarcade_admin.php:554
+msgid ""
+"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
+"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+msgstr ""
+
+#: core/myarcade_admin.php:560
+msgid "An unknown error occurred"
+msgstr ""
+
+#: core/myarcade_admin.php:620
+msgid "Remove this game from the database"
+msgstr ""
+
+#: core/myarcade_admin.php:639
+msgid "New Contest"
+msgstr ""
+
+#: core/myarcade_admin.php:770
+msgid "Play"
+msgstr ""
+
+#: core/myarcade_admin.php:1048
+#, php-format
+msgid ""
+"The thumbs directory '%s' must be writeable (chmod 777) in order to download "
+"thumbnails or screenshots."
+msgstr ""
+
+#: core/myarcade_admin.php:1194
+msgid "MyArcadePlugin Stats"
+msgstr ""
+
+#: core/myarcade_admin.php:1196
+#, php-format
+msgid ""
+"Enable site statistics to collect <strong>game plays and play duration</"
+"strong> for each game. This will help you to optimize your site and to get a "
+"better overview of your visitors. By enabling this feature MyArcadePlugin "
+"will collect and send us non-sensitive diagnostic data and usage "
+"information. Those data will help us to make MyArcadePlugin even better. "
+"%1$sFind out more%2$s."
+msgstr ""
+
+#: core/translate.php:32
+msgid "Azure Key missing!"
+msgstr ""
+
+#: core/translate.php:77
+msgid "Microsoft Translator - New Token - Unexpected Error Code: "
+msgstr ""
+
+#: core/translate.php:210 core/translate.php:222 core/translate.php:228
+msgid "Google Translation Error"
+msgstr ""
+
+#: core/translate.php:222 core/translate.php:300
+msgid "Unknown Error"
+msgstr ""
+
+#: core/translate.php:278
+msgid "Operation completed successfully"
+msgstr ""
+
+#: core/translate.php:279
+msgid "Invalid API key"
+msgstr ""
+
+#: core/translate.php:280
+msgid "This API key has been blocked"
+msgstr ""
+
+#: core/translate.php:281
+msgid "You have reached the daily limit for requests"
+msgstr ""
+
+#: core/translate.php:282
+msgid "You have reached the daily limit for the volume of translated text"
+msgstr ""
+
+#: core/translate.php:283
+msgid "The text size exceeds the maximum"
+msgstr ""
+
+#: core/translate.php:284
+msgid "The text could not be translated"
+msgstr ""
+
+#: core/translate.php:285
+msgid "The specified translation direction is not supported"
+msgstr ""
+
+#: core/translate.php:289 core/translate.php:300 core/translate.php:306
+msgid "Yandex Translation Error"
+msgstr ""
+
+#: core/translate.php:347
+msgid "Translation service not selected!"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:94
+msgid "Summary"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:104
+msgid "Top Games off All Time"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:114
+msgid "User Ratio (Last 30 Days)"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:124
+msgid "Most Active Users"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:134
+msgid "Unpopular Games"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:144
+msgid "Currently Unplayed Games"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:156
+msgid "Game Plays"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:166
+msgid "Latest Game Plays"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:176
+msgid "Hourly Game Plays"
+msgstr ""
+
+#: includes/admin/class-myarcade-admin-reports.php:199
+msgid "Loading..."
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-latest-plays.php:16
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-top-games.php:20
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-unplayed-games.php:16
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-unpopular-games.php:16
+msgid "Game"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-latest-plays.php:19
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-top-users.php:20
+msgid "User"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-latest-plays.php:22
+msgid "Played ago"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-latest-plays.php:25
+msgid "Duration"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-latest-plays.php:33
+msgid "Guest"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-latest-plays.php:46
+#, php-format
+msgid "%s seconds"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-plays-hourly.php:30
+msgid "Yesterday's hourly plays"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-plays.php:31
+#, php-format
+msgid "Plays in the last %s days"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-plays.php:70
+msgid "Number of plays"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-summary.php:15
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-top-games.php:23
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-top-users.php:23
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-unpopular-games.php:22
+msgid "Plays"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-summary.php:19
+msgid "Today"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-summary.php:23
+msgid "Yesterday"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-summary.php:27
+msgid "Last 7 Days"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-summary.php:31
+msgid "Last 30 Days"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-summary.php:35
+msgid "Total"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-top-users.php:34
+msgid "Unknown"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-unplayed-games.php:19
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-unpopular-games.php:19
+msgid "Publish Date"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-user-ratio.php:17
+msgid "Registered Users"
+msgstr ""
+
+#: includes/admin/stats-widgets/class-myarcade-admin-widget-user-ratio.php:18
+msgid "Unregistered Visitors"
+msgstr ""
+
+#: modules/buddypress.php:69
+#, php-format
+msgid "I just played %s and got %s points!"
+msgstr ""
+
+#: modules/buddypress.php:70
+#, php-format
+msgid "%s submitted new score"
+msgstr ""
+
+#: modules/buddypress.php:112
+#, php-format
+msgid "I just achieved a %s on %s"
+msgstr ""
+
+#: modules/buddypress.php:113
+#, php-format
+msgid "%s submitted new achivement"
+msgstr ""
+
+#: modules/buddypress.php:131
+msgid "Activity Settings"
+msgstr ""
+
+#: modules/buddypress.php:132
+msgid "Post to my Activty Stream when:"
+msgstr ""
+
+#: modules/buddypress.php:137
+msgid "Arcade Activities"
+msgstr ""
+
+#: modules/buddypress.php:145
+msgid "I submit scores"
+msgstr ""
+
+#: modules/buddypress.php:151
+msgid "I achieve medala"
+msgstr ""
+
+#: modules/buddypress.php:157
+msgid "I add games to favorites"
+msgstr ""
+
+#: modules/buddypress.php:163
+msgid "I remove games from favorites"
+msgstr ""
+
+#: modules/favorite-posts.php:39
+#, php-format
+msgid "I have marked %s as one of my favorite games!"
+msgstr ""
+
+#: modules/favorite-posts.php:40
+#, php-format
+msgid "%s added to favorites"
+msgstr ""
+
+#: modules/favorite-posts.php:84
+#, php-format
+msgid "I have removed %s from my favorites!"
+msgstr ""
+
+#: modules/favorite-posts.php:85
+#, php-format
+msgid "%s removed from favorites"
+msgstr ""
+
+#: myarcadeplugin.php:200
+msgid "Flash (SWF)"
+msgstr ""
+
+#: myarcadeplugin.php:201
+msgid "HTML5 Game"
+msgstr ""
+
+#: myarcadeplugin.php:202
+msgid "IBPArcade Game"
+msgstr ""
+
+#: myarcadeplugin.php:203
+msgid "Iframe URL"
+msgstr ""
+
+#: myarcadeplugin.php:204
+msgid "PHPBB Game"
+msgstr ""
+
+#: myarcadeplugin.php:205
+msgid "Shochwave (DCR)"
+msgstr ""
+
+#: myarcadeplugin.php:206
+msgid "Unity"
+msgstr ""
+
+#: myarcadeplugin.php:274
+msgid "1 Minute"
+msgstr ""
+
+#: myarcadeplugin.php:275
+msgid "5 Minutes"
+msgstr ""
+
+#: myarcadeplugin.php:276
+msgid "10 Minutes"
+msgstr ""
+
+#: myarcadeplugin.php:277
+msgid "15 Minutes"
+msgstr ""
+
+#: myarcadeplugin.php:278
+msgid "30 Minutes"
+msgstr ""
+
+#: myarcadeplugin.php:279
+msgid "Once Weekly"
+msgstr ""
+
+#: myarcadeplugin.php:396
+msgid "Docs"
+msgstr ""
+
+#: myarcadeplugin.php:397
+msgid "Premium Support"
+msgstr ""

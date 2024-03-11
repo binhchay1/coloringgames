@@ -1,0 +1,89 @@
+ = 4.3.0 : 2020-10-20 =
+  * New: BuddyPress compatibility
+  * Tweak: Optimization for small screens
+  * Fix: Automatic game resize not working properly for some games
+
+ = 4.2.0 : 2020-09-26 =
+  * New: Automatic game resize to max available width/height
+  * Tweak: Optimized CSS for game displaying on mobile devices
+  * Fix: Game displaying CSS issues
+  * Fix: Game buttons not displayed on simple layout
+
+ = 4.1.2 : 2020-09-15 =
+  * Tweak: Removed unused files
+  * Tweak: Paginantion text color to make it more readable
+  * Fix: Complex theme div close missing
+  * Fix: Header button alignment on screens smaller than 400px
+  * Fix: Issues with WordPress 5.5+
+  * Fix: PHP Notice in config.php
+
+ = 4.1.1 : 2020-04-08 =
+  * Fix: Lights on/off not working properly
+  * Fix: Fullscreen feature not working properly
+  * Fix: Missing placeholder image added
+
+ = 4.1.0 : 2020-02-11 =
+  * New: Display only mobile games on mobile devices
+  * New: TGM Plugin Activation added
+  * Tweak: Improved game displaying on mobile devices
+  * Tweak: Removed custom login page
+
+= 4.0.0 : 2019-10-08 =
+  * New: Moved options panel to redux for improved user interface, performance, and to streamline development
+  * New: Code refactoring
+  * New: bbPress MCE Editor
+  * New: WooCommerce Support
+  * New: Moved rewrites to own file and refactored code
+  * New: Toolbar color for Android devices
+  * New: Tile color for Windows devices
+  * New: IOS Toolbar Style
+  * New: Header code option with code editor
+  * New: Footer code option with code editor
+  * New: JSON LD Markup for games
+  * New: JSON LD Markup for blog posts
+  * New: Frontpage text box title option
+  * New: Option to set tag count for cloud widget
+  * New: Option to set category count for cloud widget
+  * New: Option to set game count for homepage
+  * New: Option to set game count for tag archives
+  * New: Option to set game count for category archives
+  * New: Option to set game count for search results
+  * New: Comments reply JS added
+  * New: Option to enable or disable category description
+  * New: New default advertisement images (more neutral design from myarcadetheme)
+  * New: header and footer code can be output on the full-screen page
+  * New: Favorite Games Page now has top banner option
+  * New: Favorite Games Page now has bottom banner option
+  * New: Favorite Games Page now has dedicated games banner option
+  * Tweak: Removed option to float banner to the right on homepage. This option didn't work and didn't have any associated styling removed to avoid confusion
+  * Tweak: Removed pingback / trackbacks from the comments section to improve the user interface
+  * Tweak: Optimized adbox code and removed old code
+  * Tweak: CSS optimization for mobile devices
+  * Fix: Removed misc HTML files in the images folder
+  * Fix: Removed duplicate style.css on full-screen page
+  * Fix: Advertisement on popular game page now aligns correctly
+  * Fix: Simple page designs now show related posts correctly
+  * Fix: Game embed boxes now display correctly
+  * Fix: Favorite button while logged in on complex game template
+  * Fix: Games not centered on the play page
+
+= 3.1.0 : 2019-06-07 =
+  * New: Display of non:game posts
+  * Tweak: Optimized mobile compatibility
+  * Tweak: Improved Theme Performance
+  * Fix: Admin links on games page (Edit, Delete)
+  * Fix: Login/register form CSS
+  * Fix: 404 template styling
+
+= 3.0.0 : 2019-05-31 =
+  * New: Responsive design
+  * New: Three color schemes
+  * New: Improved Theme Performance
+  * New: Updated to MyArcadePlugin API
+  * New: Customizable footer copyright note
+  * Tweak: Removed Timthumb
+  * Tweak: Removed Cubepoints support
+  * Tweak: Removed AddThis Social Sharing
+  * Tweak: Removed Cubepoints support
+  * Fix: PHP Notices
+  * Fix: Pagination styling

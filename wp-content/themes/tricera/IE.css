@@ -1,0 +1,14 @@
+
+.side_right { margin-left: 1010px; }
+
+.side_right { margin-left: 5px\0/; }
+
+.tag-blue { background:#0D78B6; }
+.tag-blue:hover { background: #69C03B; }
+
+.cat-orange { background: #69C03B; }
+.cat-orange:hover { background: #1977D7; }
+
+.CATCUBE_BG { overflow-y: auto!important; min-height: 200px; }
+
+#login form { background: url(images/form_loginbg.png) no-repeat top left!important;}
