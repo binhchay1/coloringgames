@@ -22,7 +22,7 @@ $h1HomepageDescription = get_option('h1_homepage_description');
 
   <div id="content_tricera">
     <?php
-    $recent = new WP_Query('posts_per_page=' . get_option('posts_per_page') . '&paged=' . get_query_var('paged') . tricera_mobile_tag());
+    $recent = new WP_Query('posts_per_page=' . get_option('posts_per_page') . '&paged=' . get_query_var('paged') . tricera_mobile_tag() . '&meta_key=mabp_game_type');
 
     $prevlink = str_replace(array("<a href=\"", "\" ></a>"), "", get_previous_posts_link(""));
     $nextlink = str_replace(array("<a href=\"", "\" ></a>"), "", get_next_posts_link(""));
