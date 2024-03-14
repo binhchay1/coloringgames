@@ -143,8 +143,9 @@ if (!is_admin()) {
 function tricera_web_logo()
 {
   $custom_logo = tricera_get_option('logohd');
+  
   if ($custom_logo) {
-    echo '<style>#logo a {background: url(' . $custom_logo['url'] . ') top left no-repeat;}</style>';
+    echo '<style>.logobox a {background: url("' . $custom_logo['url'] . '") top left no-repeat;}</style>';
   }
 ?>
   <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"></a>
