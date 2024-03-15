@@ -18,7 +18,7 @@ $getCustomCategory = $wpdb->get_results("SELECT * FROM wp_category_custom WHERE 
 
   <?php if(have_posts()) : ?>
     <div class="games_title">
-      <h1 class="catpage_title"><?php
+      <h2 class="catpage_title"><?php
       if (is_category()) {
         echo single_cat_title(),' Games';
       } elseif (is_day()) {
@@ -36,7 +36,7 @@ $getCustomCategory = $wpdb->get_results("SELECT * FROM wp_category_custom WHERE 
       } else {
         _e("Blog Archives", "tricera");
       }
-      ?></h1></div>
+      ?></h2></div>
 
       <?php
 
