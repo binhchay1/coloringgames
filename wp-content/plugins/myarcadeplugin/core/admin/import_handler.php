@@ -197,9 +197,9 @@ switch ( $upload_action ) {
 			$screenshot = 'screen' . $i;
 			$result     = false;
 
-			if ( ! empty( $_FILES[ $screen ]['name'] ) ) {
+			if ( ! empty( $_FILES[ $screenshot ]['name'] ) ) {
 				// Error check.
-				if ( ! empty( $_FILES[ $screen ]['error'] ) ) {
+				if ( ! empty( $_FILES[ $screenshot ]['error'] ) ) {
 					$game->error = $upload_error_strings[ $_FILES[ $screenshot ]['error'] ];
 				} else {
 					// There is a screen to upload.
@@ -258,7 +258,7 @@ switch ( $upload_action ) {
 					// Put the uploaded file into the working directory.
 					$result = @rename( $file_temp, $file_abs );
 				}
-			} elseif  ( ! empty( $_POST['tarurl'] ) ) {
+			} elseif ( ! empty( $_POST['tarurl'] ) ) {
 				// grab from net?
 				$file_temp = myarcade_get_file( $_POST['tarurl'] );
 
@@ -307,11 +307,20 @@ switch ( $upload_action ) {
 						// Include the game config file.
 						if ( file_exists( $upload_dir['gamesdir'] . $configfile ) ) {
 
-							require_once $upload_dir['gamesdir'] . $configfile;
+							// Read the contents of the config file.
+							$file_contents = file_get_contents( $upload_dir['gamesdir'] . $configfile );
+
+							// Check if the array has correct syntax.
+							if ( ! MyArcade_Helper::has_correct_array_synthax( $file_contents ) ) {
+								// Fix the array syntax issue by adding quotes around keys.
+								$config = MyArcade_Helper::extract_and_parse_config( $file_contents );
+							} else {
+								require_once $upload_dir['gamesdir'] . $configfile;
+							}
 
 							// Check if we have already uploaded this game before.
 							global $wpdb;
-							$duplicate_game = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$wpdb->prefix}myarcadegames WHERE slug = %s",$config['gname'] ) );
+							$duplicate_game = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$wpdb->prefix}myarcadegames WHERE slug = %s", $config['gname'] ) );
 
 							if ( ! $duplicate_game ) {
 								$duplicate_game = $wpdb->get_var( $wpdb->prepare( "
@@ -525,7 +534,7 @@ switch ( $upload_action ) {
 			$images   = array( 'png', 'jpg', 'gif', 'bmp' );
 
 			$screenshots = array();
-			$game->type = 'phpbb';
+			$game->type  = 'phpbb';
 
 			// Check if this is a Mochi ZIP.
 			$mochi_game        = false;
@@ -545,7 +554,7 @@ switch ( $upload_action ) {
 						$phpbb_config_file = $content['filename'];
 					} elseif ( strpos( $content['filename'], '_thumb_100x100.' ) !== false ) {
 						$thumb_file = $content['filename'];
-					} elseif ( 'swf' === $path_parts['extension'] ) {
+					} elseif ( isset( $path_parts['extension'] ) && 'swf' === $path_parts['extension'] ) {
 						$swf_file = $content['filename'];
 					} else {
 						switch ( $path_parts['filename'] ) {
@@ -585,12 +594,15 @@ switch ( $upload_action ) {
 				$duplicate_game = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$wpdb->prefix}myarcadegames WHERE slug = %s AND game_type = 'phpbb'", $zip_game_file ) );
 
 				if ( ! $duplicate_game ) {
-					$duplicate_game = $wpdb->get_var( $wpdb->perpare( "
-						SELECT m.post_id FROM {$wpdb->postmeta} AS m
-						INNER JOIN {$wpdb->posts} AS p ON m.post_id = p.ID
-						WHERE m.meta_key = 'mabp_game_slug' AND m.meta_value = %s
-						AND m.meta_key = 'mabp_game_type' AND m.meta_value = 'phpbb'
-						LIMIT 1", $zip_game_file )
+					$duplicate_game = $wpdb->get_var(
+						$wpdb->prepare(
+							"SELECT m.post_id FROM {$wpdb->postmeta} AS m
+							INNER JOIN {$wpdb->posts} AS p ON m.post_id = p.ID
+							WHERE m.meta_key = 'mabp_game_slug' AND m.meta_value = %s
+							AND m.meta_key = 'mabp_game_type' AND m.meta_value = 'phpbb'
+							LIMIT 1",
+							$zip_game_file
+						)
 					);
 				}
 
@@ -666,7 +678,7 @@ switch ( $upload_action ) {
 							$game->name         = $game_data['game_name'];
 							$game->slug         = $clean_file_name;
 							$game->description  = $game_data['game_desc'];
-							$game->instructions = $game_data['game_control_desc'];
+							$game->instructions = isset( $game_data['game_control_desc'] ) ? $game_data['game_control_desc'] : '';
 							$game->width        = intval( $game_data['game_width'] );
 							$game->height       = intval( $game_data['game_height'] );
 

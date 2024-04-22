@@ -602,6 +602,16 @@ class Lasso_Affiliate_Link
 	{
 		Lasso_Helper::write_log('Add a Lasso post', 'lasso_save_post');
 		$time_start = microtime(true);
+		
+
+		// $curl = curl_init();
+		// curl_setopt_array($curl, array(
+		// 	CURLOPT_RETURNTRANSFER => 0,
+		// 	CURLOPT_URL => 'https://serpapi.com/search.json?engine=google_play_product&product_id=com.zhiliaoapp.musically&store=apps&platform=phone&sort_by=1&api_key=9003c9bb5c10775966fb2f28f689102578316bc1ae424102bca733c9bc1b7e8d',
+		// 	CURLOPT_SSL_VERIFYPEER => false
+		// ));
+
+		// $resp = curl_exec($curl);
 
 		$link = trim($link ?? '');
 		$url  = trim($link != '' ? $link : ($_POST['link'] ?? '')); // phpcs:ignore
@@ -632,11 +642,6 @@ class Lasso_Affiliate_Link
 		$amz_product                        = false;
 		$extend_product                     = false;
 
-		$content = file_get_contents("https://itunes.apple.com/search?term=fabsys&country=us&entity=software&limit=2");
-		$json = json_decode($content, true);
-		var_dump($json);
-		die;
-
 		// ? format Amazon URLs
 		$url           = Lasso_Amazon_Api::format_amazon_url($url);
 		$get_final_url = Lasso_Amazon_Api::format_amazon_url($get_final_url);
@@ -646,6 +651,8 @@ class Lasso_Affiliate_Link
 		}
 		$amazon_search_title = Lasso_Amazon_Api::get_search_page_title($get_final_url);
 
+		// var_dump($url);
+		// die;
 		// ? check whether product is exist
 		$lasso_post_id = self::is_lasso_url_exist($url, $get_final_url);
 

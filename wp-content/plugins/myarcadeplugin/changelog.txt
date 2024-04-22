@@ -1,3 +1,10 @@
+= v6.3.0 - 2024-03-21 =
+  * New - Ruffle Emulator integration - Play old flash games
+  * Fix - Deprecated jQuery functions
+  * Fix - Screenshot upload on manual game import
+  * Fix - Import of IBPArcade games that don't have correct syntax in the game configuration file
+  * Fix - Some of the PHPCS issues
+
 = v6.2.2 - 2023-09-22 =
   * Fix - PHP deprecated warnings
   * Fix - PHP session warning

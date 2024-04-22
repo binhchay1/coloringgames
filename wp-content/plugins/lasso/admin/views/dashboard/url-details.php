@@ -713,8 +713,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 						type: 'post',
 						data: {
 							action: 'lasso_report_urls',
-							post_id: '<?php echo $_GET['post_id'] ?? ''; // phpcs:ignore 
-										?>',
+							post_id: '<?php echo $_GET['post_id'] ?? ''; // phpcs:ignore ?>',
 							link_type: link_type,
 							pageNumber: page,
 							pageSize: limit,

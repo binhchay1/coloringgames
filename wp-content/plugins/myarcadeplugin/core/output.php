@@ -183,9 +183,34 @@ function get_game( $game_id = false, $fullsize = false, $preview = false, $fulls
 				case 'flash':
 				default:
 					$embed_parameters = apply_filters( 'myarcade_embed_parameters', 'wmode="direct" menu="false" quality="high"', $game_id );
-					$code = '<embed src="' . $game_url . '" ' . $embed_parameters . ' width="' . $gamewidth . '" height="' . $gameheight . '" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
-
+					$code             = '<object><embed id="ruffle-game" src="' . $game_url . '" ' . $embed_parameters . ' width="' . $gamewidth . '" height="' . $gameheight . '" allowscriptaccess="always" type="application/x-shockwave-flash" /></object>';
 					$code = apply_filters( 'myarcade_flash_output', $code, $game_url, $gamewidth, $gameheight, $embed_parameters );
+
+					ob_start();
+					?>
+					<script>
+						document.addEventListener("DOMContentLoaded", function () {
+							document.getElementById('fullscreen_toggle').addEventListener('click', function() {
+								var elem = document.getElementById('ruffle-game');
+								if (elem.requestFullscreen) {
+										elem.requestFullscreen();
+								} else if (elem.mozRequestFullScreen) { /* Firefox */
+										elem.mozRequestFullScreen();
+								} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+										elem.webkitRequestFullscreen();
+								} else if (elem.msRequestFullscreen) { /* IE/Edge */
+										elem.msRequestFullscreen();
+								}
+							});
+						});
+					</script>
+					<?php
+					$js_code = ob_get_clean();
+
+					$code .= $js_code;
+
+					// Embed ruffle emulator.
+					myarcade_ruffle_embed();
 					break;
 			}
 		} else {
@@ -283,4 +308,19 @@ function myarcade_get_leaderboard_code() {
 	}
 	</script>
 	<?php
+}
+
+/**
+ * Embed ruffle (Flash Emulator) into the footer.
+ *
+ * @return void
+ */
+function myarcade_ruffle_embed() {
+	wp_enqueue_script(
+		'myarcade_ruffle',
+		'https://unpkg.com/@ruffle-rs/ruffle',
+		array(),
+		'1.0',
+		true
+	);
 }

@@ -3,11 +3,11 @@
  * Plugin Name:  MyArcadePlugin Pro
  * Plugin URI:   https://myarcadeplugin.com
  * Description:  WordPress Arcade Plugin
- * Version:      6.2.2
+ * Version:      6.3.0
  * Author:       Daniel Bakovic
  * Author URI:   https://myarcadeplugin.com
  * Requires at least: 6.0
- * Requires PHP: 7.0
+ * Requires PHP: 7.4
  *
  * @package MyArcadePlugin
  */
@@ -23,7 +23,7 @@ if ( ! class_exists( 'MyArcadePlugin' ) ) :
 		 *
 		 * @var string
 		 */
-		public $version = '6.2.2';
+		public $version = '6.3.0';
 
 		/**
 		 * A single instance of MyArcadePlugin.

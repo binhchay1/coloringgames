@@ -428,7 +428,7 @@ function myarcade_header( $echo = true ) {
 	<script type="text/javascript">
 		jQuery(document).ready(function(){
 			jQuery(".toggle_container").hide();
-			jQuery("h2.trigger").click(function(){
+			jQuery("h2.trigger").on( 'click',function(){
 				jQuery(this).toggleClass("active").next().slideToggle("slow");
 			});
 		});
