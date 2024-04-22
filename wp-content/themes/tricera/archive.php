@@ -127,6 +127,4 @@ $getCustomCategory = $wpdb->get_results("SELECT * FROM wp_category_custom WHERE 
       </div>
     <?php endif; ?>
 
-
-
     <?php get_footer(); ?>
