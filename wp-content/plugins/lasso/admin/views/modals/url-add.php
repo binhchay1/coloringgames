@@ -206,6 +206,8 @@
 				}
 			})
 			.done(function(res) {
+				console.log(res);
+				return;
 				if ( ! form_add_link_is_text_area() ) {
 					if(res.success) {
 						// Track URL Creation Event
