@@ -67,9 +67,9 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 		$extend_product_id = $lasso_url->extend_product->product_id;
 		$lasso_post        = Lasso_Post::create_instance($lasso_url->lasso_id, $lasso_url);
 		$description       = $lasso_post->is_show_description() ? $lasso_url->description : '';
+
 		?>
 		<form id="url-details" autocomplete="off">
-			<!-- EDIT DETAILS -->
 			<div class="row mb-5">
 				<div class="col-lg-5 mb-lg-0 mb-5 h-100">
 					<div class="white-bg rounded shadow p-4">
@@ -146,7 +146,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								</div>
 							</div>
 
-							<div class="col-lg mb-4">
+							<div class="col-lg-6 mb-4">
 								<label class="toggle m-0 mr-1">
 									<input id="url-open-link2" name="open_new_tab2" type="checkbox" <?php echo esc_html($lasso_url->url_detail_checkbox->open_new_tab2); ?>>
 									<span class="slider"></span>
@@ -154,12 +154,44 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<label data-tooltip="When enabled, users who click this link will have it loaded in a new tab.">New Window / Tab <i class="far fa-info-circle light-purple"></i></label>
 							</div>
 
-							<div class="col-lg text-right">
+							<div class="col-lg-6 text-right">
 								<label class="toggle m-0 mr-1">
 									<input name="enable_nofollow2" id="url-en-nofollow2" type="checkbox" <?php echo esc_html($lasso_url->url_detail_checkbox->enable_nofollow2); ?>>
 									<span class="slider"></span>
 								</label>
 								<label data-tooltip="When enabled, this link will be set to nofollow. This indicates to Google that it's an affiliate link.">NoFollow / NoIndex <i class="far fa-info-circle light-purple"></i></label>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="form-group mb-4">
+									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+										<strong>Price</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->price ?>" placeholder="https://www.example.com/affiliate-id2">
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="form-group mb-4">
+									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+										<strong>Developer</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->developer ?>" placeholder="https://www.example.com/affiliate-id2">
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="form-group mb-4">
+									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+										<strong>Rating</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->rating ?>" placeholder="https://www.example.com/affiliate-id2">
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="form-group mb-4">
+									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+										<strong>Categories</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->categories ?>" placeholder="https://www.example.com/affiliate-id2">
+								</div>
 							</div>
 						</div>
 
@@ -175,16 +207,6 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 						<div class="form-group mb-1">
 							<div class="add-custom-fields">
 								<div id="custom-fields" class="ui-sortable">
-									<?php //include(LASSO_PLUGIN_PATH . '/admin/views/rows/field-details-row.php'); 
-									?>
-									<!--
-									<div class="url-details-field-box">
-										<div class="row ml-3 font-italic">Product Description</div>
-										<div class="row ml-3 font-italic"><small>Drag Fields Above or Below Description</small></div>
-									</div>
-									-->
-									<?php //include(LASSO_PLUGIN_PATH . '/admin/views/rows/field-details-row.php'); 
-									?>
 								</div>
 								<button class="btn" type="button" data-toggle="modal" data-target="#field-create">Add Custom Field</button>
 								<a href="https://support.getlasso.co/en/articles/5150630-how-to-use-fields" target="_blank" class="btn ml-3 learn-btn">
@@ -290,39 +312,6 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<?php echo $description; ?>
 							</div>
 						</div>
-
-						<!-- BADGE & RATING
-							<div class="form-group mb-4">
-								<div class="form-row align-items-center">
-									<div class="col">
-										<label data-tooltip="Appears as a badge on your displays. Can be edited in Settings > Fields.">Badge <i class="icon-info light-purple"></i></label>
-										<select class="form-control">
-											<option>Our Pick</option>
-											<option>Runner Up</option>
-											<option>Budget Pick</option>
-										</select>
-									</div>
-
-									<div class="col">
-										<label data-tooltip="Appears on your displays. Can be edited in Settings > Fields.">Rating <i class="icon-info light-purple"></i></label>
-
-										<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
-
-
-										<div class="rating-container">
-										<div class="rating">
-											<span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
-											<span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
-											<span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
-											<span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
-											<span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
-										</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						-->
 
 						<!-- DISCLOSURE -->
 						<div class="form-group mb-4">

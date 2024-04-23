@@ -197,6 +197,10 @@ class Lasso_Affiliate_Link
 			$enable_sponsored = get_post_meta($post_id, 'enable_sponsored', true); // phpcs:ignore: ? 1 or 0 or empty
 			$enable_sponsored = 1 === intval($enable_sponsored) ? true : false;
 
+			$rating = get_post_meta($post_id, 'rating', true);
+			$categories = get_post_meta($post_id, 'categories', true);
+			$developer = get_post_meta($post_id, 'developer', true);
+
 			// ? for second button
 			$open_new_tab2 = get_post_meta($post_id, 'open_new_tab2', true); // phpcs:ignore: ? 1 or 0 or empty
 			$open_new_tab2 = 1 === intval($open_new_tab2) ? true : false;
@@ -376,23 +380,6 @@ class Lasso_Affiliate_Link
 
 		$display_secondary_url = Lasso_Amazon_Api::get_amazon_product_url($display_secondary_url, true, false);
 
-		/*
-		Temp holding place for pro/con fields. Unsure of how to properly structure this so we can make it display well.
-		Might be harder to allow separate. Perhaps use the higher of the two positions and then pull them together?
-
-		$pros = array_search(2, array_column($fields, 'field_id'));
-		if($pros !== false) {
-			$pros = ($pros !== false ? $fields[$pros] : null);
-			array_shift($fields);
-		}
-
-		$cons = array_search(3, array_column($fields, 'field_id'));
-		if($cons !== false) {
-			$cons = ($cons !== false ? $fields[$cons] : null);
-			array_shift($fields);
-		}
-		*/
-
 		$user_created = $fields;
 
 		$lasso_url = (object) array(
@@ -422,6 +409,9 @@ class Lasso_Affiliate_Link
 			'link_cloaking'       => $link_cloaking,
 			'public_link'         => Lasso_Amazon_Api::get_amazon_product_url($public_link),
 			'currency'            => $currency,
+			'rating'              => $rating,
+			'categories'          => $categories,
+			'developer'           => $developer,
 			'display'             => (object) array(
 				'theme'                         => $custom_theme,
 				'primary_button_text'           => $display_primary_button_text,
@@ -602,16 +592,6 @@ class Lasso_Affiliate_Link
 	{
 		Lasso_Helper::write_log('Add a Lasso post', 'lasso_save_post');
 		$time_start = microtime(true);
-		
-
-		// $curl = curl_init();
-		// curl_setopt_array($curl, array(
-		// 	CURLOPT_RETURNTRANSFER => 0,
-		// 	CURLOPT_URL => 'https://serpapi.com/search.json?engine=google_play_product&product_id=com.zhiliaoapp.musically&store=apps&platform=phone&sort_by=1&api_key=9003c9bb5c10775966fb2f28f689102578316bc1ae424102bca733c9bc1b7e8d',
-		// 	CURLOPT_SSL_VERIFYPEER => false
-		// ));
-
-		// $resp = curl_exec($curl);
 
 		$link = trim($link ?? '');
 		$url  = trim($link != '' ? $link : ($_POST['link'] ?? '')); // phpcs:ignore
@@ -651,8 +631,50 @@ class Lasso_Affiliate_Link
 		}
 		$amazon_search_title = Lasso_Amazon_Api::get_search_page_title($get_final_url);
 
-		// var_dump($url);
-		// die;
+		$parse_url = wp_parse_url($get_final_url);
+		if ($parse_url['host'] == 'play.google.com') {
+			$query_url = $parse_url['query'];
+			$idAppPlay = '';
+			$explodeQuery = explode('&', $query_url);
+			foreach ($explodeQuery as $explode) {
+
+				$explodeInExplode = explode('=', $explode);
+				if ($explodeInExplode[0] == 'id') {
+					$idAppPlay = $explodeInExplode[1];
+				}
+			}
+
+			if ($idAppPlay == '') {
+				return 'No id to save.';
+			} else {
+				$apiGooglePlay = 'https://serpapi.com/search.json?engine=google_play_product&product_id=';
+				$apiKeySerp = '9003c9bb5c10775966fb2f28f689102578316bc1ae424102bca733c9bc1b7e8d';
+				$curlUrl = $apiGooglePlay . $idAppPlay . '&store=apps&platform=phone&api_key=' . $apiKeySerp;
+				$curl = curl_init();
+				curl_setopt_array($curl, array(
+					CURLOPT_RETURNTRANSFER => true,
+					CURLOPT_URL => $curlUrl,
+					CURLOPT_SSL_VERIFYPEER => false
+				));
+
+				$resp = curl_exec($curl);
+				curl_close($curl);
+
+
+				if ($resp) {
+					$productAppGoogle = [];
+					$resp = json_decode($resp);
+					$productInfo = $resp->product_info;
+					$productAppGoogle['title'] = $productInfo->title;
+					$productAppGoogle['rating'] = $productInfo->rating;
+					$productAppGoogle['price'] = $productInfo->offers[0]->price;
+					$productAppGoogle['authors'] = $productInfo->authors[0]->name;
+					$productAppGoogle['categories'] = $resp->categories[0]->name;
+					$productAppGoogle['thumbnail'] = $resp->media->video->thumbnail;
+				}
+			}
+		}
+
 		// ? check whether product is exist
 		$lasso_post_id = self::is_lasso_url_exist($url, $get_final_url);
 
@@ -726,8 +748,6 @@ class Lasso_Affiliate_Link
 				}
 			}
 
-			$title       = $product['default_product_name'];
-			$image       = $product['default_image'];
 			$amz_product = $product;
 
 			$url = Lasso_Amazon_Api::get_amazon_product_url($get_final_url, true, false);
@@ -763,6 +783,18 @@ class Lasso_Affiliate_Link
 			}
 
 			$permalink = $title ? sanitize_title($title) : Lasso_Helper::get_title_by_url($url);
+		}
+
+		$google_product = false;
+
+		if (isset($productAppGoogle)) {
+			$amz_product = $productAppGoogle;
+			$title       = $productAppGoogle['title'];
+			$image       = $productAppGoogle['thumbnail'];
+			$google_product = $productAppGoogle;
+		} else {
+			$title       = $product['default_product_name'];
+			$image       = $product['default_image'];
 		}
 
 		if (!$is_amazon_link && ('' === $title || $title === $default_title)) {
@@ -802,7 +834,7 @@ class Lasso_Affiliate_Link
 		Lasso_Helper::write_log('Add a Lasso post - End', 'lasso_save_post');
 
 		$data['settings'] = $affiliate_link;
-		$post_id          = $this->save_lasso_url($data, $is_ajax_request, $res, $amz_product, $extend_product);
+		$post_id          = $this->save_lasso_url($data, $is_ajax_request, $res, $amz_product, $extend_product, $google_product);
 
 		if ('' !== $link) {
 			return $post_id;
@@ -830,7 +862,7 @@ class Lasso_Affiliate_Link
 	 * @param bool  $amz_product    Amazon product. Default to false.
 	 * @param bool  $extend_product Extend product. Default to false.
 	 */
-	public function save_lasso_url($data = null, $is_ajax = false, $res = false, $amz_product = false, $extend_product = false)
+	public function save_lasso_url($data = null, $is_ajax = false, $res = false, $amz_product = false, $extend_product = false, $google_product = false)
 	{
 		Lasso_Helper::write_log('Save Lasso post', 'lasso_save_post');
 		$time_start = microtime(true);
@@ -1042,6 +1074,46 @@ class Lasso_Affiliate_Link
 				'enable_sponsored'       => $post_data['enable_sponsored'] ?? $lasso_url->enable_sponsored,
 			),
 		);
+
+		if ($google_product) {
+			$lasso_post = array(
+				'post_title'   => $google_product['title'],
+				'post_type'    => LASSO_POST_TYPE,
+				'post_name'    => $google_product['title'],
+				'post_content' => '',
+				'post_status'  => 'publish',
+				'meta_input'   => array(
+					'lasso_custom_redirect'  => $url,
+					'lasso_final_url'        => $get_final_url,
+
+					'rating' => $google_product['rating'],
+					'developer' => $google_product['author'],
+					'categories' => $google_product['categories'],
+
+					'affiliate_desc'         => $description,
+					'price'                  => $google_product['price'],
+					'lasso_custom_thumbnail' => $google_product['thumbnail'],
+
+					'enable_nofollow'        => $post_data['enable_nofollow'] ?? $lasso_url->enable_nofollow,
+					'open_new_tab'           => $post_data['open_new_tab'] ?? $lasso_url->open_new_tab,
+					'enable_nofollow2'       => $post_data['enable_nofollow2'] ?? $lasso_url->enable_nofollow2,
+					'open_new_tab2'          => $post_data['open_new_tab2'] ?? $lasso_url->open_new_tab2,
+					'link_cloaking'          => $post_data['link_cloaking'] ?? $lasso_url->link_cloaking,
+
+					'custom_theme'           => $post_data['theme_name'] ?? $lasso_url->display->theme,
+					'disclosure_text'        => trim($post_data['disclosure_text'] ?? $lasso_url->display->disclosure_text),
+					'badge_text'             => $post_data['badge_text'] ?? $lasso_url->display->badge_text,
+					'buy_btn_text'           => $post_data['buy_btn_text'] ?? $lasso_url->display->primary_button_text,
+					'second_btn_url'         => $post_data['second_btn_url'] ?? $lasso_url->display->secondary_url,
+					'second_btn_text'        => $post_data['second_btn_text'] ?? $lasso_url->display->secondary_button_text,
+
+					'show_price'             => $post_data['show_price'] ?? $lasso_url->display->show_price,
+					'show_disclosure'        => $post_data['show_disclosure'] ?? $lasso_url->display->show_disclosure,
+					'show_description'       => $show_description,
+					'enable_sponsored'       => $post_data['enable_sponsored'] ?? $lasso_url->enable_sponsored,
+				),
+			);
+		}
 
 		if ($lasso_url->lasso_id > 0 && strpos($lasso_url->guid, site_url()) === false) {
 			$query = "update {$wpdb->posts} set guid = '' where ID = {$lasso_url->lasso_id}";
