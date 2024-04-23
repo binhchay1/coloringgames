@@ -636,6 +636,7 @@ class Lasso_Affiliate_Link
 		$amazon_search_title = Lasso_Amazon_Api::get_search_page_title($get_final_url);
 
 		$parse_url = wp_parse_url($get_final_url);
+
 		$apiKeySerp = '9003c9bb5c10775966fb2f28f689102578316bc1ae424102bca733c9bc1b7e8d';
 		if ($parse_url['host'] == 'play.google.com') {
 			$query_url = $parse_url['query'];
@@ -663,7 +664,6 @@ class Lasso_Affiliate_Link
 
 				$resp = curl_exec($curl);
 				curl_close($curl);
-
 
 				if ($resp) {
 					$productAppGoogle = [];
@@ -706,7 +706,6 @@ class Lasso_Affiliate_Link
 				$resp = curl_exec($curl);
 				curl_close($curl);
 
-
 				if ($resp) {
 					$productAppStore = [];
 					$resp = json_decode($resp);
@@ -721,8 +720,6 @@ class Lasso_Affiliate_Link
 				}
 			}
 		}
-
-
 
 		// ? check whether product is exist
 		$lasso_post_id = self::is_lasso_url_exist($url, $get_final_url);

@@ -166,7 +166,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<div class="form-group mb-4">
 									<label data-tooltip="Price of app in store">
 										<strong>Price</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->price ?>" placeholder="Price app">
+									<input type="text" class="form-control" id="price_app" value="<?php echo $lasso_url->price ?>" placeholder="Price app">
 								</div>
 							</div>
 
@@ -174,7 +174,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<div class="form-group mb-4">
 									<label data-tooltip="Developer of app in store">
 										<strong>Developer</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->developer ?>" placeholder="Developer app">
+									<input type="text" class="form-control" id="developer_app" value="<?php echo $lasso_url->developer ?>" placeholder="Developer app">
 								</div>
 							</div>
 
@@ -182,7 +182,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<div class="form-group mb-4">
 									<label data-tooltip="Rating of app in store">
 										<strong>Rating</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->rating ?>" placeholder="Rating app">
+									<input type="text" class="form-control" id="rating_app" value="<?php echo $lasso_url->rating ?>" placeholder="Rating app">
 								</div>
 							</div>
 
@@ -190,7 +190,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<div class="form-group mb-4">
 									<label data-tooltip="Category of app in store">
 										<strong>Categories</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->categories ?>" placeholder="Categories app">
+									<input type="text" class="form-control" id="categories_app" value="<?php echo $lasso_url->categories ?>" placeholder="Categories app">
 								</div>
 							</div>
 
@@ -198,7 +198,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<div class="form-group mb-4">
 									<label data-tooltip="Size off app in store">
 										<strong>Size</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->size ?>" placeholder="Size app">
+									<input type="text" class="form-control" id="size_app" value="<?php echo $lasso_url->size ?>" placeholder="Size app">
 								</div>
 							</div>
 
@@ -206,7 +206,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<div class="form-group mb-4">
 									<label data-tooltip="Version of app in store">
 										<strong>Version</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->version ?>" placeholder="Version app">
+									<input type="text" class="form-control" id="version_app" value="<?php echo $lasso_url->version ?>" placeholder="Version app">
 								</div>
 							</div>
 						</div>
