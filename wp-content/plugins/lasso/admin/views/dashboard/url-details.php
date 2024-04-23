@@ -164,33 +164,49 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 
 							<div class="col-lg-6">
 								<div class="form-group mb-4">
-									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+									<label data-tooltip="Price of app in store">
 										<strong>Price</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->price ?>" placeholder="https://www.example.com/affiliate-id2">
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->price ?>" placeholder="Price app">
 								</div>
 							</div>
 
 							<div class="col-lg-6">
 								<div class="form-group mb-4">
-									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+									<label data-tooltip="Developer of app in store">
 										<strong>Developer</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->developer ?>" placeholder="https://www.example.com/affiliate-id2">
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->developer ?>" placeholder="Developer app">
 								</div>
 							</div>
 
 							<div class="col-lg-6">
 								<div class="form-group mb-4">
-									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+									<label data-tooltip="Rating of app in store">
 										<strong>Rating</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->rating ?>" placeholder="https://www.example.com/affiliate-id2">
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->rating ?>" placeholder="Rating app">
 								</div>
 							</div>
 
 							<div class="col-lg-6">
 								<div class="form-group mb-4">
-									<label data-tooltip="A secondary URL you want people to go to when they click an optional second button in displays">
+									<label data-tooltip="Category of app in store">
 										<strong>Categories</strong> <i class="far fa-info-circle light-purple"></i></label>
-									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->categories ?>" placeholder="https://www.example.com/affiliate-id2">
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->categories ?>" placeholder="Categories app">
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="form-group mb-4">
+									<label data-tooltip="Size off app in store">
+										<strong>Size</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->size ?>" placeholder="Size app">
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="form-group mb-4">
+									<label data-tooltip="Version of app in store">
+										<strong>Version</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="second_btn_url" value="<?php echo $lasso_url->version ?>" placeholder="Version app">
 								</div>
 							</div>
 						</div>

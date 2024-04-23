@@ -200,6 +200,8 @@ class Lasso_Affiliate_Link
 			$rating = get_post_meta($post_id, 'rating', true);
 			$categories = get_post_meta($post_id, 'categories', true);
 			$developer = get_post_meta($post_id, 'developer', true);
+			$size = get_post_meta($post_id, 'size', true);
+			$version = get_post_meta($post_id, 'version', true);
 
 			// ? for second button
 			$open_new_tab2 = get_post_meta($post_id, 'open_new_tab2', true); // phpcs:ignore: ? 1 or 0 or empty
@@ -412,6 +414,8 @@ class Lasso_Affiliate_Link
 			'rating'              => $rating,
 			'categories'          => $categories,
 			'developer'           => $developer,
+			'version'           => $version,
+			'size'           => $size,
 			'display'             => (object) array(
 				'theme'                         => $custom_theme,
 				'primary_button_text'           => $display_primary_button_text,
@@ -632,6 +636,7 @@ class Lasso_Affiliate_Link
 		$amazon_search_title = Lasso_Amazon_Api::get_search_page_title($get_final_url);
 
 		$parse_url = wp_parse_url($get_final_url);
+		$apiKeySerp = '9003c9bb5c10775966fb2f28f689102578316bc1ae424102bca733c9bc1b7e8d';
 		if ($parse_url['host'] == 'play.google.com') {
 			$query_url = $parse_url['query'];
 			$idAppPlay = '';
@@ -648,7 +653,6 @@ class Lasso_Affiliate_Link
 				return 'No id to save.';
 			} else {
 				$apiGooglePlay = 'https://serpapi.com/search.json?engine=google_play_product&product_id=';
-				$apiKeySerp = '9003c9bb5c10775966fb2f28f689102578316bc1ae424102bca733c9bc1b7e8d';
 				$curlUrl = $apiGooglePlay . $idAppPlay . '&store=apps&platform=phone&api_key=' . $apiKeySerp;
 				$curl = curl_init();
 				curl_setopt_array($curl, array(
@@ -668,12 +672,57 @@ class Lasso_Affiliate_Link
 					$productAppGoogle['title'] = $productInfo->title;
 					$productAppGoogle['rating'] = $productInfo->rating;
 					$productAppGoogle['price'] = $productInfo->offers[0]->price;
-					$productAppGoogle['authors'] = $productInfo->authors[0]->name;
+					$productAppGoogle['developer'] = $productInfo->authors[0]->name;
 					$productAppGoogle['categories'] = $resp->categories[0]->name;
 					$productAppGoogle['thumbnail'] = $resp->media->video->thumbnail;
 				}
 			}
 		}
+
+		if ($parse_url['host'] == 'apps.apple.com') {
+			$path = $parse_url['path'];
+			$idAppStore = '';
+			$explodePath = explode('/', $path);
+			$regex = '/[i][d][0-9]/';
+			foreach ($explodePath as $itemPath) {
+				if (preg_match($regex, $itemPath)) {
+					$explodePreg = explode('id', $itemPath);
+					$idAppStore = $explodePreg[1];
+				}
+			}
+
+			if ($idAppStore == '') {
+				return 'No id to save.';
+			} else {
+				$apiAppStore = 'https://serpapi.com/search.json?engine=apple_product&product_id=';
+				$curlUrl = $apiAppStore . $idAppStore . '&api_key=' . $apiKeySerp;
+				$curl = curl_init();
+				curl_setopt_array($curl, array(
+					CURLOPT_RETURNTRANSFER => true,
+					CURLOPT_URL => $curlUrl,
+					CURLOPT_SSL_VERIFYPEER => false
+				));
+
+				$resp = curl_exec($curl);
+				curl_close($curl);
+
+
+				if ($resp) {
+					$productAppStore = [];
+					$resp = json_decode($resp);
+					$productAppStore['title'] = $resp->title;
+					$productAppStore['rating'] = $resp->rating;
+					$productAppStore['price'] = $resp->price;
+					$productAppStore['developer'] = $resp->developer->name;
+					$productAppStore['categories'] = $resp->information->categories[0];
+					$productAppStore['thumbnail'] = $resp->logo;
+					$productAppStore['size'] = $resp->information->size;
+					$productAppStore['version'] = $resp->version_history[0]->release_version;
+				}
+			}
+		}
+
+
 
 		// ? check whether product is exist
 		$lasso_post_id = self::is_lasso_url_exist($url, $get_final_url);
@@ -786,12 +835,16 @@ class Lasso_Affiliate_Link
 		}
 
 		$google_product = false;
+		$apple_product = false;
 
 		if (isset($productAppGoogle)) {
-			$amz_product = $productAppGoogle;
 			$title       = $productAppGoogle['title'];
 			$image       = $productAppGoogle['thumbnail'];
 			$google_product = $productAppGoogle;
+		} elseif (isset($apple_product)) {
+			$title       = $productAppStore['title'];
+			$image       = $productAppStore['thumbnail'];
+			$apple_product = $productAppStore;
 		} else {
 			$title       = $product['default_product_name'];
 			$image       = $product['default_image'];
@@ -834,7 +887,8 @@ class Lasso_Affiliate_Link
 		Lasso_Helper::write_log('Add a Lasso post - End', 'lasso_save_post');
 
 		$data['settings'] = $affiliate_link;
-		$post_id          = $this->save_lasso_url($data, $is_ajax_request, $res, $amz_product, $extend_product, $google_product);
+
+		$post_id          = $this->save_lasso_url($data, $is_ajax_request, $res, $amz_product, $extend_product, $google_product, $apple_product);
 
 		if ('' !== $link) {
 			return $post_id;
@@ -862,7 +916,7 @@ class Lasso_Affiliate_Link
 	 * @param bool  $amz_product    Amazon product. Default to false.
 	 * @param bool  $extend_product Extend product. Default to false.
 	 */
-	public function save_lasso_url($data = null, $is_ajax = false, $res = false, $amz_product = false, $extend_product = false, $google_product = false)
+	public function save_lasso_url($data = null, $is_ajax = false, $res = false, $amz_product = false, $extend_product = false, $google_product = false, $apple_product = false)
 	{
 		Lasso_Helper::write_log('Save Lasso post', 'lasso_save_post');
 		$time_start = microtime(true);
@@ -1087,12 +1141,54 @@ class Lasso_Affiliate_Link
 					'lasso_final_url'        => $get_final_url,
 
 					'rating' => $google_product['rating'],
-					'developer' => $google_product['author'],
+					'developer' => $google_product['developer'],
 					'categories' => $google_product['categories'],
 
 					'affiliate_desc'         => $description,
 					'price'                  => $google_product['price'],
 					'lasso_custom_thumbnail' => $google_product['thumbnail'],
+
+					'enable_nofollow'        => $post_data['enable_nofollow'] ?? $lasso_url->enable_nofollow,
+					'open_new_tab'           => $post_data['open_new_tab'] ?? $lasso_url->open_new_tab,
+					'enable_nofollow2'       => $post_data['enable_nofollow2'] ?? $lasso_url->enable_nofollow2,
+					'open_new_tab2'          => $post_data['open_new_tab2'] ?? $lasso_url->open_new_tab2,
+					'link_cloaking'          => $post_data['link_cloaking'] ?? $lasso_url->link_cloaking,
+
+					'custom_theme'           => $post_data['theme_name'] ?? $lasso_url->display->theme,
+					'disclosure_text'        => trim($post_data['disclosure_text'] ?? $lasso_url->display->disclosure_text),
+					'badge_text'             => $post_data['badge_text'] ?? $lasso_url->display->badge_text,
+					'buy_btn_text'           => $post_data['buy_btn_text'] ?? $lasso_url->display->primary_button_text,
+					'second_btn_url'         => $post_data['second_btn_url'] ?? $lasso_url->display->secondary_url,
+					'second_btn_text'        => $post_data['second_btn_text'] ?? $lasso_url->display->secondary_button_text,
+
+					'show_price'             => $post_data['show_price'] ?? $lasso_url->display->show_price,
+					'show_disclosure'        => $post_data['show_disclosure'] ?? $lasso_url->display->show_disclosure,
+					'show_description'       => $show_description,
+					'enable_sponsored'       => $post_data['enable_sponsored'] ?? $lasso_url->enable_sponsored,
+				),
+			);
+		}
+
+		if ($apple_product) {
+			$lasso_post = array(
+				'post_title'   => $apple_product['title'],
+				'post_type'    => LASSO_POST_TYPE,
+				'post_name'    => $apple_product['title'],
+				'post_content' => '',
+				'post_status'  => 'publish',
+				'meta_input'   => array(
+					'lasso_custom_redirect'  => $url,
+					'lasso_final_url'        => $get_final_url,
+
+					'rating' => $apple_product['rating'],
+					'developer' => $apple_product['developer'],
+					'categories' => $apple_product['categories'],
+					'version' => $apple_product['version'],
+					'size' => $apple_product['size'],
+
+					'affiliate_desc'         => $description,
+					'price'                  => $apple_product['price'],
+					'lasso_custom_thumbnail' => $apple_product['thumbnail'],
 
 					'enable_nofollow'        => $post_data['enable_nofollow'] ?? $lasso_url->enable_nofollow,
 					'open_new_tab'           => $post_data['open_new_tab'] ?? $lasso_url->open_new_tab,
