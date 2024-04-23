@@ -637,7 +637,29 @@ class Lasso_Affiliate_Link
 
 		$parse_url = wp_parse_url($get_final_url);
 
-		$apiKeySerp = '9003c9bb5c10775966fb2f28f689102578316bc1ae424102bca733c9bc1b7e8d';
+		$apiKeySerp = '84bd0a6bfb477cd0ec422dd7cd457ca547e46b637e32ce8d7d94c30acca43c8e';
+		if (!array_key_exists('host', $parse_url)) {
+			$apiSearchGoogle = 'https://serpapi.com/search.json?engine=google_play&q=';
+			$keySearchGoogle = $parse_url['path'];
+			$curlUrl = $apiSearchGoogle . $keySearchGoogle . '&api_key=' . $apiKeySerp;
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_URL => $curlUrl,
+				CURLOPT_SSL_VERIFYPEER => false
+			));
+
+			$respGoogle = curl_exec($curl);
+			curl_close($curl);
+			$respGoogle = json_decode($respGoogle);
+
+			if(isset($respGoogle->app_highlight)) {
+				
+			}
+
+		} else {
+		}
+
 		if ($parse_url['host'] == 'play.google.com') {
 			$query_url = $parse_url['query'];
 			$idAppPlay = '';
