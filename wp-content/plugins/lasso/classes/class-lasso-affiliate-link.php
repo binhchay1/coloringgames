@@ -171,6 +171,8 @@ class Lasso_Affiliate_Link
 			$display_secondary_button_text = '' === $display_secondary_button_text ? $display_secondary_button_text_default : $display_secondary_button_text;
 
 			$display_secondary_url = trim(get_post_meta($post_id, 'second_btn_url', true));
+			$display_third_url = trim(get_post_meta($post_id, 'third_btn_url', true));
+			$display_fourth_url = trim(get_post_meta($post_id, 'fourth_btn_url', true));
 
 			$display_disclosure_text = get_post_meta($post_id, 'disclosure_text', true);
 			$display_disclosure_text = '' === trim($display_disclosure_text) ? $settings['disclosure_text'] : $display_disclosure_text;
@@ -202,6 +204,9 @@ class Lasso_Affiliate_Link
 			$developer = get_post_meta($post_id, 'developer', true);
 			$size = get_post_meta($post_id, 'size', true);
 			$version = get_post_meta($post_id, 'version', true);
+			$screen_shots = get_post_meta($post_id, 'screen_shots', true);
+			$apple_url = get_post_meta($post_id, 'apple_url', true);
+			$google_play_url = get_post_meta($post_id, 'google_play_url', true);
 
 			// ? for second button
 			$open_new_tab2 = get_post_meta($post_id, 'open_new_tab2', true); // phpcs:ignore: ? 1 or 0 or empty
@@ -416,6 +421,10 @@ class Lasso_Affiliate_Link
 			'developer'           => $developer,
 			'version'           => $version,
 			'size'           => $size,
+			'screen_shots'           => $screen_shots,
+			'apple_url'           => $apple_url,
+			'google_play_url'           => $google_play_url,
+
 			'display'             => (object) array(
 				'theme'                         => $custom_theme,
 				'primary_button_text'           => $display_primary_button_text,
@@ -430,6 +439,8 @@ class Lasso_Affiliate_Link
 				'show_disclosure'               => $display_show_disclosure,
 				'show_description'              => $display_show_description,
 				'last_updated'                  => $display_last_updated,
+				'third_url'                  	=> $display_third_url,
+				'fourth_url'                  => $display_fourth_url,
 			),
 			'amazon'              => (object) array(
 				'amazon_id'             => $amazon_product_id,
@@ -636,12 +647,14 @@ class Lasso_Affiliate_Link
 		$amazon_search_title = Lasso_Amazon_Api::get_search_page_title($get_final_url);
 
 		$parse_url = wp_parse_url($get_final_url);
+		$is_keyword = false;
 
-		$apiKeySerp = '84bd0a6bfb477cd0ec422dd7cd457ca547e46b637e32ce8d7d94c30acca43c8e';
+		$apiKeySerp = '2e012c4331346280042ad2946814f792ff852975d49043c5e70fbe89ae6b9922';
 		if (!array_key_exists('host', $parse_url)) {
+			$is_keyword = true;
 			$apiSearchGoogle = 'https://serpapi.com/search.json?engine=google_play&q=';
 			$keySearchGoogle = $parse_url['path'];
-			$curlUrl = $apiSearchGoogle . $keySearchGoogle . '&api_key=' . $apiKeySerp;
+			$curlUrl = $apiSearchGoogle . urlencode($keySearchGoogle) . '&api_key=' . $apiKeySerp;
 			$curl = curl_init();
 			curl_setopt_array($curl, array(
 				CURLOPT_RETURNTRANSFER => true,
@@ -652,28 +665,169 @@ class Lasso_Affiliate_Link
 			$respGoogle = curl_exec($curl);
 			curl_close($curl);
 			$respGoogle = json_decode($respGoogle);
-
-			if(isset($respGoogle->app_highlight)) {
-				
-			}
-
-		} else {
-		}
-
-		if ($parse_url['host'] == 'play.google.com') {
-			$query_url = $parse_url['query'];
 			$idAppPlay = '';
-			$explodeQuery = explode('&', $query_url);
-			foreach ($explodeQuery as $explode) {
 
-				$explodeInExplode = explode('=', $explode);
-				if ($explodeInExplode[0] == 'id') {
-					$idAppPlay = $explodeInExplode[1];
+			if (isset($respGoogle->app_highlight)) {
+				if (strpos($respGoogle->app_highlight->title, $parse_url['path']) !== false) {
+					$idAppPlay = $respGoogle->app_highlight->product_id;
+				}
+			} else {
+				foreach ($respGoogle->organic_results as $resultSearchAppPlay) {
+					if (strpos($resultSearchAppPlay->items[0]->title, $parse_url['path']) !== false) {
+						$idAppPlay = $resultSearchAppPlay->items[0]->product_id;
+					}
 				}
 			}
 
+			$apiSearchApple = 'https://serpapi.com/search.json?engine=apple_app_store&term=';
+			$keySearchApple = $parse_url['path'];
+			$curlUrl = $apiSearchApple . urlencode($keySearchApple) . '&api_key=' . $apiKeySerp;
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_URL => $curlUrl,
+				CURLOPT_SSL_VERIFYPEER => false
+			));
+
+			$respApple = curl_exec($curl);
+			curl_close($curl);
+			$respApple = json_decode($respApple);
+			$idAppStore = '';
+
+			if (isset($respApple->app_highlight)) {
+				if (strpos($respApple->app_highlight->title, $parse_url['path']) !== false) {
+					$idAppStore = $respApple->app_highlight->id;
+				}
+			} else {
+				foreach ($respApple->organic_results as $resultSearchAppStore) {
+					if (strpos($resultSearchAppStore->title, $parse_url['path']) !== false) {
+						$idAppStore = $resultSearchAppStore->id;
+					}
+				}
+			}
+		}
+
+		if (!$is_keyword) {
+			if ($parse_url['host'] == 'play.google.com') {
+				$query_url = $parse_url['query'];
+				$idAppPlay = '';
+				$explodeQuery = explode('&', $query_url);
+				foreach ($explodeQuery as $explode) {
+
+					$explodeInExplode = explode('=', $explode);
+					if ($explodeInExplode[0] == 'id') {
+						$idAppPlay = $explodeInExplode[1];
+					}
+				}
+
+				if ($idAppPlay == '') {
+					$productAppGoogle = [
+						'title' => '',
+						'rating' => '',
+						'price' => '',
+						'developer' => '',
+						'categories' => '',
+						'thumbnail' => '',
+						'screen_shots' => '',
+					];
+				} else {
+					$apiGooglePlay = 'https://serpapi.com/search.json?engine=google_play_product&product_id=';
+					$curlUrl = $apiGooglePlay . $idAppPlay . '&store=apps&platform=phone&api_key=' . $apiKeySerp;
+					$curl = curl_init();
+					curl_setopt_array($curl, array(
+						CURLOPT_RETURNTRANSFER => true,
+						CURLOPT_URL => $curlUrl,
+						CURLOPT_SSL_VERIFYPEER => false
+					));
+
+					$resp = curl_exec($curl);
+					curl_close($curl);
+
+					if ($resp) {
+						$productAppGoogle = [];
+						$resp = json_decode($resp);
+						$productInfo = $resp->product_info;
+						$productAppGoogle['title'] = $productInfo->title;
+						$productAppGoogle['rating'] = $productInfo->rating;
+						$productAppGoogle['price'] = $productInfo->offers[0]->price;
+						$productAppGoogle['developer'] = $productInfo->authors[0]->name;
+						$productAppGoogle['categories'] = $resp->categories[0]->name;
+						$productAppGoogle['thumbnail'] = $resp->media->video->thumbnail;
+						$productAppGoogle['screen_shots'] = json_encode($resp->media->images);
+					}
+				}
+			}
+
+			if ($parse_url['host'] == 'apps.apple.com') {
+				$path = $parse_url['path'];
+				$idAppStore = '';
+				$explodePath = explode('/', $path);
+				$regex = '/[i][d][0-9]/';
+				foreach ($explodePath as $itemPath) {
+					if (preg_match($regex, $itemPath)) {
+						$explodePreg = explode('id', $itemPath);
+						$idAppStore = $explodePreg[1];
+					}
+				}
+
+				if ($idAppStore == '') {
+					$productAppStore = [
+						'title' => '',
+						'rating' => '',
+						'price' => '',
+						'developer' => '',
+						'categories' => '',
+						'thumbnail' => '',
+						'size' => '',
+						'version' => '',
+						'screen_shots' => '',
+					];
+				} else {
+					$apiAppStore = 'https://serpapi.com/search.json?engine=apple_product&product_id=';
+					$curlUrl = $apiAppStore . $idAppStore . '&api_key=' . $apiKeySerp;
+					$curl = curl_init();
+					curl_setopt_array($curl, array(
+						CURLOPT_RETURNTRANSFER => true,
+						CURLOPT_URL => $curlUrl,
+						CURLOPT_SSL_VERIFYPEER => false
+					));
+
+					$resp = curl_exec($curl);
+					curl_close($curl);
+
+					if ($resp) {
+						$productAppStore = [];
+						$resp = json_decode($resp);
+						$productAppStore['title'] = $resp->title;
+						$productAppStore['rating'] = $resp->rating;
+						$productAppStore['price'] = $resp->price;
+						$productAppStore['developer'] = $resp->developer->name;
+						$productAppStore['categories'] = $resp->information->categories[0];
+						$productAppStore['thumbnail'] = $resp->logo;
+						$productAppStore['size'] = $resp->information->size;
+						$productAppStore['version'] = $resp->version_history[0]->release_version;
+						if (isset($resp->iphone_screenshots)) {
+							$productAppStore['screen_shots'] = json_encode($resp->iphone_screenshots);
+						}
+
+						if (isset($resp->ipad_screenshots)) {
+							$productAppStore['screen_shots'] = json_encode($resp->ipad_screenshots);
+						}
+					}
+				}
+			}
+		} else {
 			if ($idAppPlay == '') {
-				return 'No id to save.';
+				$productAppGoogle = [
+					'title' => '',
+					'rating' => '',
+					'price' => '',
+					'developer' => '',
+					'categories' => '',
+					'thumbnail' => '',
+					'screen_shots' => '',
+					'base_url' => '',
+				];
 			} else {
 				$apiGooglePlay = 'https://serpapi.com/search.json?engine=google_play_product&product_id=';
 				$curlUrl = $apiGooglePlay . $idAppPlay . '&store=apps&platform=phone&api_key=' . $apiKeySerp;
@@ -697,24 +851,24 @@ class Lasso_Affiliate_Link
 					$productAppGoogle['developer'] = $productInfo->authors[0]->name;
 					$productAppGoogle['categories'] = $resp->categories[0]->name;
 					$productAppGoogle['thumbnail'] = $resp->media->video->thumbnail;
-				}
-			}
-		}
-
-		if ($parse_url['host'] == 'apps.apple.com') {
-			$path = $parse_url['path'];
-			$idAppStore = '';
-			$explodePath = explode('/', $path);
-			$regex = '/[i][d][0-9]/';
-			foreach ($explodePath as $itemPath) {
-				if (preg_match($regex, $itemPath)) {
-					$explodePreg = explode('id', $itemPath);
-					$idAppStore = $explodePreg[1];
+					$productAppGoogle['screen_shots'] = json_encode($resp->media->images);
+					$productAppGoogle['base_url'] = $resp->search_metadata->google_play_product_url;
 				}
 			}
 
 			if ($idAppStore == '') {
-				return 'No id to save.';
+				$productAppStore = [
+					'title' => '',
+					'rating' => '',
+					'price' => '',
+					'developer' => '',
+					'categories' => '',
+					'thumbnail' => '',
+					'size' => '',
+					'version' => '',
+					'screen_shots' => '',
+					'base_url' => '',
+				];
 			} else {
 				$apiAppStore = 'https://serpapi.com/search.json?engine=apple_product&product_id=';
 				$curlUrl = $apiAppStore . $idAppStore . '&api_key=' . $apiKeySerp;
@@ -739,6 +893,14 @@ class Lasso_Affiliate_Link
 					$productAppStore['thumbnail'] = $resp->logo;
 					$productAppStore['size'] = $resp->information->size;
 					$productAppStore['version'] = $resp->version_history[0]->release_version;
+					$productAppStore['base_url'] = $resp->search_metadata->apple_product_url;
+					if (isset($resp->iphone_screenshots)) {
+						$productAppStore['screen_shots'] = json_encode($resp->iphone_screenshots);
+					}
+
+					if (isset($resp->ipad_screenshots)) {
+						$productAppStore['screen_shots'] = json_encode($resp->ipad_screenshots);
+					}
 				}
 			}
 		}
@@ -856,26 +1018,35 @@ class Lasso_Affiliate_Link
 		$google_product = false;
 		$apple_product = false;
 
-		if (isset($productAppGoogle)) {
+		if (isset($productAppGoogle) && !isset($productAppStore)) {
 			$title       = $productAppGoogle['title'];
 			$image       = $productAppGoogle['thumbnail'];
 			$google_product = $productAppGoogle;
-		} elseif (isset($apple_product)) {
+		} elseif (isset($productAppStore) && !isset($productAppGoogle)) {
 			$title       = $productAppStore['title'];
 			$image       = $productAppStore['thumbnail'];
 			$apple_product = $productAppStore;
+		} elseif (isset($productAppStore) && isset($productAppGoogle)) {
+			$title       = !empty($productAppGoogle['title']) ? $productAppGoogle['title'] : $productAppStore['title'];
+			$image       = !empty($productAppGoogle['thumbnail']) ? $productAppGoogle['thumbnail'] : $productAppStore['thumbnail'];
+			$url       = !empty($productAppGoogle['base_url']) ? $productAppGoogle['base_url'] : $productAppStore['base_url'];
+			$google_product = $productAppGoogle;
+			$apple_product = $productAppStore;
+			$permalink = $this->create_slug($parse_url['path']);
 		} else {
 			$title       = $product['default_product_name'];
 			$image       = $product['default_image'];
 		}
 
-		if (!$is_amazon_link && ('' === $title || $title === $default_title)) {
-			$title = $permalink;
-		} elseif ($is_amazon_link && '' === $title) {
-			$title = $default_title;
-		}
-		if (!$title) {
-			$title = Lasso_Helper::get_title_by_url($url);
+		if (!$google_product && !$apple_product) {
+			if (!$is_amazon_link && ('' === $title || $title === $default_title)) {
+				$title = $permalink;
+			} elseif ($is_amazon_link && '' === $title) {
+				$title = $default_title;
+			}
+			if (!$title) {
+				$title = Lasso_Helper::get_title_by_url($url);
+			}
 		}
 
 		$affiliate_link = array(
@@ -1093,6 +1264,10 @@ class Lasso_Affiliate_Link
 			$status = 500;
 		}
 
+		if ($google_product && $apple_product) {
+			$status = 200;
+		}
+
 		$amazon_product_id   = Lasso_Amazon_Api::get_product_id_country_by_url($get_final_url);
 		$extend_product_url  = Lasso_Extend_Product::url_to_get_product_id($url, $get_final_url);
 		$extend_product_type = Lasso_Extend_Product::get_extend_product_type_from_url($extend_product_url);
@@ -1128,6 +1303,14 @@ class Lasso_Affiliate_Link
 				'price'                  => $post_data['price'] ?? $lasso_url->price ?? '',
 				'lasso_custom_thumbnail' => $custom_thumbnail,
 
+				'rating' => $post_data['rating'],
+				'developer' => $post_data['developer'],
+				'categories' => $post_data['categories'],
+				'version' => $post_data['version'],
+				'size' => $post_data['size'],
+				'apple_url' => $post_data['apple_url'],
+				'google_play_url' => $post_data['google_play_url'],
+
 				'enable_nofollow'        => $post_data['enable_nofollow'] ?? $lasso_url->enable_nofollow,
 				'open_new_tab'           => $post_data['open_new_tab'] ?? $lasso_url->open_new_tab,
 				'enable_nofollow2'       => $post_data['enable_nofollow2'] ?? $lasso_url->enable_nofollow2,
@@ -1140,6 +1323,8 @@ class Lasso_Affiliate_Link
 				'buy_btn_text'           => $post_data['buy_btn_text'] ?? $lasso_url->display->primary_button_text,
 				'second_btn_url'         => $post_data['second_btn_url'] ?? $lasso_url->display->secondary_url,
 				'second_btn_text'        => $post_data['second_btn_text'] ?? $lasso_url->display->secondary_button_text,
+				'third_btn_url'        	 => $post_data['third_btn_url'] ?? $lasso_url->display->third_url,
+				'fourth_btn_url'         => $post_data['fourth_btn_url'] ?? $lasso_url->display->fourth_btn_url,
 
 				'show_price'             => $post_data['show_price'] ?? $lasso_url->display->show_price,
 				'show_disclosure'        => $post_data['show_disclosure'] ?? $lasso_url->display->show_disclosure,
@@ -1162,6 +1347,7 @@ class Lasso_Affiliate_Link
 					'rating' => $google_product['rating'],
 					'developer' => $google_product['developer'],
 					'categories' => $google_product['categories'],
+					'screen_shots' => $google_product['screen_shots'],
 
 					'affiliate_desc'         => $description,
 					'price'                  => $google_product['price'],
@@ -1196,14 +1382,60 @@ class Lasso_Affiliate_Link
 				'post_content' => '',
 				'post_status'  => 'publish',
 				'meta_input'   => array(
-					'lasso_custom_redirect'  => $url,
-					'lasso_final_url'        => $get_final_url,
+					'lasso_custom_redirect'  => $apple_product['base_url'],
+					'lasso_final_url'        => $apple_product['base_url'],
 
 					'rating' => $apple_product['rating'],
 					'developer' => $apple_product['developer'],
 					'categories' => $apple_product['categories'],
 					'version' => $apple_product['version'],
 					'size' => $apple_product['size'],
+					'screen_shots' => $apple_product['screen_shots'],
+
+					'affiliate_desc'         => $description,
+					'price'                  => $apple_product['price'],
+					'lasso_custom_thumbnail' => $apple_product['thumbnail'],
+
+					'enable_nofollow'        => $post_data['enable_nofollow'] ?? $lasso_url->enable_nofollow,
+					'open_new_tab'           => $post_data['open_new_tab'] ?? $lasso_url->open_new_tab,
+					'enable_nofollow2'       => $post_data['enable_nofollow2'] ?? $lasso_url->enable_nofollow2,
+					'open_new_tab2'          => $post_data['open_new_tab2'] ?? $lasso_url->open_new_tab2,
+					'link_cloaking'          => $post_data['link_cloaking'] ?? $lasso_url->link_cloaking,
+
+					'custom_theme'           => $post_data['theme_name'] ?? $lasso_url->display->theme,
+					'disclosure_text'        => trim($post_data['disclosure_text'] ?? $lasso_url->display->disclosure_text),
+					'badge_text'             => $post_data['badge_text'] ?? $lasso_url->display->badge_text,
+					'buy_btn_text'           => $post_data['buy_btn_text'] ?? $lasso_url->display->primary_button_text,
+					'second_btn_url'         => $post_data['second_btn_url'] ?? $lasso_url->display->secondary_url,
+					'second_btn_text'        => $post_data['second_btn_text'] ?? $lasso_url->display->secondary_button_text,
+
+					'show_price'             => $post_data['show_price'] ?? $lasso_url->display->show_price,
+					'show_disclosure'        => $post_data['show_disclosure'] ?? $lasso_url->display->show_disclosure,
+					'show_description'       => $show_description,
+					'enable_sponsored'       => $post_data['enable_sponsored'] ?? $lasso_url->enable_sponsored,
+				),
+			);
+		}
+
+		if ($google_product && $apple_product) {
+			$lasso_post = array(
+				'post_title'   => $apple_product['title'],
+				'post_type'    => LASSO_POST_TYPE,
+				'post_name'    => $apple_product['title'],
+				'post_content' => '',
+				'post_status'  => 'publish',
+				'meta_input'   => array(
+					'lasso_custom_redirect'  => $url,
+					'lasso_final_url'        => $get_final_url,
+
+					'rating' => !empty($google_product['rating']) ? $google_product['rating'] : $apple_product['rating'],
+					'developer' => !empty($google_product['developer']) ? $google_product['developer'] : $apple_product['developer'],
+					'categories' => $google_product['categories'],
+					'version' => $apple_product['version'],
+					'size' => $apple_product['size'],
+					'screen_shots' => $google_product['screen_shots'],
+					'apple_url' => $apple_product['base_url'],
+					'google_play_url' => $google_product['base_url'],
 
 					'affiliate_desc'         => $description,
 					'price'                  => $apple_product['price'],
@@ -2527,5 +2759,47 @@ class Lasso_Affiliate_Link
 		}
 
 		return $post_name;
+	}
+
+	public function create_slug($string)
+	{
+		$search = array(
+			'#(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)#',
+			'#(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)#',
+			'#(ì|í|ị|ỉ|ĩ)#',
+			'#(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)#',
+			'#(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)#',
+			'#(ỳ|ý|ỵ|ỷ|ỹ)#',
+			'#(đ)#',
+			'#(À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ)#',
+			'#(È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ)#',
+			'#(Ì|Í|Ị|Ỉ|Ĩ)#',
+			'#(Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ)#',
+			'#(Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ)#',
+			'#(Ỳ|Ý|Ỵ|Ỷ|Ỹ)#',
+			'#(Đ)#',
+			"/[^a-zA-Z0-9\-\_]/",
+		);
+		$replace = array(
+			'a',
+			'e',
+			'i',
+			'o',
+			'u',
+			'y',
+			'd',
+			'A',
+			'E',
+			'I',
+			'O',
+			'U',
+			'Y',
+			'D',
+			'-',
+		);
+		$string = preg_replace($search, $replace, $string);
+		$string = preg_replace('/(-)+/', '-', $string);
+		$string = strtolower($string);
+		return $string;
 	}
 }

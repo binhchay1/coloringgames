@@ -14,6 +14,7 @@ use Lasso\Classes\Setting as Lasso_Setting;
 require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 ?>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 <section class="py-5">
 	<div class="container">
 
@@ -162,6 +163,38 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 								<label data-tooltip="When enabled, this link will be set to nofollow. This indicates to Google that it's an affiliate link.">NoFollow / NoIndex <i class="far fa-info-circle light-purple"></i></label>
 							</div>
 
+							<div class="col-lg-8">
+								<div class="form-group mb-4">
+									<label data-tooltip="A app store URL you want people to go to when they click an optional second button in displays">
+										<strong>App Store URL</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="apple_url" value="<?php echo esc_html($lasso_url->apple_url); ?>" placeholder="https://apps.apple.com/us/app/netflix/id363590051?platform=iphone">
+								</div>
+							</div>
+
+							<div class="col-lg-8">
+								<div class="form-group mb-4">
+									<label data-tooltip="A google app URL you want people to go to when they click an optional second button in displays">
+										<strong>Google App URL</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="google_play_url" value="<?php echo esc_html($lasso_url->google_play_url); ?>" placeholder="https://play.google.com/store/apps/details?id=net.kairosoft.android.piratedx">
+								</div>
+							</div>
+
+							<div class="col-lg-8">
+								<div class="form-group mb-4">
+									<label data-tooltip="A third URL you want people to go to when they click an optional second button in displays">
+										<strong>Third Destination URL</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="third_btn_url" value="<?php echo esc_html($lasso_url->display->third_url); ?>" placeholder="https://www.example.com/affiliate-id2">
+								</div>
+							</div>
+
+							<div class="col-lg-8">
+								<div class="form-group mb-4">
+									<label data-tooltip="A fourth URL you want people to go to when they click an optional second button in displays">
+										<strong>Fourth Destination URL</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<input type="text" class="form-control" id="fourth_btn_url" value="<?php echo esc_html($lasso_url->display->fourth_url); ?>" placeholder="https://www.example.com/affiliate-id2">
+								</div>
+							</div>
+
 							<div class="col-lg-6">
 								<div class="form-group mb-4">
 									<label data-tooltip="Price of app in store">
@@ -207,6 +240,21 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 									<label data-tooltip="Version of app in store">
 										<strong>Version</strong> <i class="far fa-info-circle light-purple"></i></label>
 									<input type="text" class="form-control" id="version_app" value="<?php echo $lasso_url->version ?>" placeholder="Version app">
+								</div>
+							</div>
+
+							<div class="col-lg-12">
+								<div class="form-group mb-4">
+									<label data-tooltip="Screen shot of app in store">
+										<strong>Screen shots</strong> <i class="far fa-info-circle light-purple"></i></label>
+									<?php if (isset($lasso_url->screen_shots) && !empty($lasso_url->screen_shots)) { ?>
+										<?php $lasso_url->screen_shots = json_decode($lasso_url->screen_shots, true); ?>
+										<div class="owl-carousel owl-theme">
+											<?php foreach ($lasso_url->screen_shots as $shot) { ?>
+												<img class="item" src="<?php echo $shot ?>" />
+											<?php } ?>
+										</div>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -400,7 +448,25 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 	</div>
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
+	jQuery('.owl-carousel').owlCarousel({
+		loop: true,
+		margin: 10,
+		nav: true,
+		responsive: {
+			0: {
+				items: 1
+			},
+			600: {
+				items: 3
+			},
+			1000: {
+				items: 5
+			}
+		}
+	})
+
 	jQuery(document).ready(function() {
 		var initial_value = get_all_values();
 		var amazon_product_id = '<?php echo esc_js($amazon_product_id ?? ''); ?>';
@@ -718,7 +784,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 						type: 'post',
 						data: {
 							action: 'lasso_report_urls',
-							post_id: '<?php echo $_GET['post_id'] ?? ''; // phpcs:ignore ?>',
+							post_id: '<?php echo $_GET['post_id'] ?? ''; ?>',
 							link_type: link_type,
 							pageNumber: page,
 							pageSize: limit,
@@ -972,7 +1038,6 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 					.always(function() {
 						jQuery('.image_loading').addClass('d-none');
 						jQuery('#demo_display_box').removeClass('d-none');
-						// jQuery('#url-delete').modal('hide');
 					});
 
 			} else {
@@ -1223,6 +1288,16 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 			var thumbnail_id = jQuery("#thumbnail_id").val();
 			var permalink = jQuery('#permalink').val();
 			var disclosure = jQuery("#disclosure").val();
+			var apple_url = jQuery("#apple_url").val();
+			var google_play_url = jQuery("#google_play_url").val();
+			var third_btn_url = jQuery("#third_btn_url").val();
+			var fourth_btn_url = jQuery("#fourth_btn_url").val();
+			var price_app = jQuery("#price_app").val();
+			var developer_app = jQuery("#developer_app").val();
+			var rating_app = jQuery("#rating_app").val();
+			var categories_app = jQuery("#categories_app").val();
+			var size_app = jQuery("#size_app").val();
+			var version_app = jQuery("#version_app").val();
 			var affiliate_desc = quill.root.innerHTML;
 			affiliate_desc = affiliate_desc == '<p><br></p>' ? '' : affiliate_desc;
 
@@ -1235,6 +1310,16 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 				thumbnail: jQuery("#render_thumbnail").attr('src'),
 				permalink: jQuery("#permalink").val(),
 				price: price,
+				apple_url: apple_url,
+				google_play_url: google_play_url,
+				third_btn_url: third_btn_url,
+				fourth_btn_url: fourth_btn_url,
+				price_app: price_app,
+				developer: developer_app,
+				rating: rating_app,
+				categories: categories_app,
+				size: size_app,
+				version: version_app,
 				// switches
 				enable_nofollow: jQuery("#url-en-nofollow").prop("checked") ? 1 : 0,
 				open_new_tab: jQuery("#url-open-link").prop("checked") ? 1 : 0,
@@ -1315,6 +1400,7 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 					}
 				})
 				.done(function(res) {
+					console.log(res);
 					if (res.success) {
 						lasso_segment_tracking('Lasso Link Saved', {
 							lasso_id: lasso_id,
@@ -1372,6 +1458,8 @@ require LASSO_PLUGIN_PATH . '/admin/views/header-new.php';
 
 						jQuery('#price').val(post.price);
 						jQuery('#second_btn_url').val(post.display.secondary_url);
+						jQuery('#third_btn_url').val(post.display.third_url);
+						jQuery('#fourth_btn_url').val(post.display.fourth_url);
 
 						show_discount_pricing = post.amazon.show_discount_pricing;
 						discount_pricing_html = post.amazon.discount_pricing_html;
